@@ -1,4 +1,4 @@
-# Práctica 1: Resolución de sistemas de ecuaciones lineales.
+# Práctica 1: Resolución de sistemas de ecuaciones lineales
 
 ## 1) Sistema de ecuaciones no homogéneos
 
