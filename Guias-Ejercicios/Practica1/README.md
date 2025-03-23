@@ -186,4 +186,39 @@ x_1 + kx_2 − x_3 = 1 \\
 x_1 + kx_2 + (k − 2)x_3 = 2
 \end{cases}$$
 
+> Lo escribimos en forma de matriz y triangulamos:
+>
+> $$ A = \begin{bmatrix}
+  1 & k & -1 & | & 1 \\
+  -1 & 1 & k^2 & | & -1 \\
+  1 & k & k-2 & | & 2
+  \end{bmatrix} $$
+>
+> Aplicamos $f_2 + f_1$ y $f_3 - f_1$:
+>
+> $$ A = \begin{bmatrix}
+  1 & k & -1 & | & 1 \\
+  0 & 1+k & k^2-1 & | & 0 \\
+  0 & 0 & k-1 & | & 1
+  \end{bmatrix} $$
+>
+> - De la última ecuación podemos sacar que si $k = 1$ el sistema no tendría solución pues quedaria una fila en $0$ igualado a algo distinto a $0$.
+> 
+> El determinante de la matriz nos da información, si $det(A) \neq 0$ entonces el sistema tiene solucion único.
+>
+> En nuestro caso tenemos:
+>
+> $$ A = \begin{bmatrix}
+  1 & k & -1 \\
+  0 & 1+k & k^2-1 \\
+  0 & 0 & k-1 \\
+  \end{bmatrix} $$
+>
+> $$det(A) = (1+k)(k-1) - [(k^2-1)*0] = k^2-1$$
+>
+> Queremos que $k^2-1 \neq 0 \Rightarrow k \neq \pm 1$
+>
+> - Como vimos que si $k=1$ el sistema no tiene solución, si $k=-1$ la segunda fila se anula, pero como el otro lado del igual también es $0$, nos dice que sería una ecuación redundante, lo que nos quedaría un sistema de 2 ecuaciones con 3 incógnitas, es decir que tendría infinitas soluciones.
+> - Y finalmente como solución única serían todos los $k \neq \pm 1$
+
 b. Considerar el sistema homogéneo asociado y dar los valores de $k$ para los cuales admite solución no trivial. Para esos $k$, resolverlo.
