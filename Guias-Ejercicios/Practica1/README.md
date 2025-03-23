@@ -222,3 +222,31 @@ x_1 + kx_2 + (k − 2)x_3 = 2
 > - Y finalmente como solución única serían todos los $k \neq \pm 1$
 
 b. Considerar el sistema homogéneo asociado y dar los valores de $k$ para los cuales admite solución no trivial. Para esos $k$, resolverlo.
+
+> Como el sistema es homogéneo, todo lo que esta a la derecha del igual es 0.
+>
+> Si $k=1$:
+>
+> $$ A = \begin{bmatrix}
+  1 & 1 & -1 & | & 0 \\
+  0 & 2 & 0 & | & 0 \\
+  0 & 0 & 0 & | & 0
+  \end{bmatrix} $$
+>
+> - De la segunda ecuación sale que $x_2 = 0$
+> - De la primera tenemos que $x_1 + 0 -x_3 = 0 \Rightarrow x_1 = x_3$
+>
+> $$(x_1,x_2,x_3)=t(1,0,1), t \in \mathbb{R}$$
+
+> Si $k=-1$
+>
+> $$ A = \begin{bmatrix}
+  1 & -1 & -1 & | & 0 \\
+  0 & 0 & 0 & | & 0 \\
+  0 & 0 & -2 & | & 0
+  \end{bmatrix} $$
+>
+> - De la tercera ecuación sale que $x_3 = 0$
+> - De la primera tenemos que $x_1 - x_2 + 0 = 0 \Rightarrow x_1 = x_2$
+>
+> $$(x_1,x_2,x_3)=t(1,1,0), t \in \mathbb{R}$$
