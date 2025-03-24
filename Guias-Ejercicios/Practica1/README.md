@@ -250,3 +250,66 @@ b. Considerar el sistema homogéneo asociado y dar los valores de $k$ para los c
 > - De la primera tenemos que $x_1 - x_2 + 0 = 0 \Rightarrow x_1 = x_2$
 >
 > $$(x_1,x_2,x_3)=t(1,1,0), t \in \mathbb{R}$$
+
+## 4) Encontrar coeficientes
+
+Encontrar los coeficientes de la parábola $y = ax^2 + bx + c$ que pasa por los puntos $(1, 1), (2, 2)$ y $(3, 0)$. Verificar el resultado obtenido usando Python. Graficar los puntos y la parábola aprovechando el siguiente código:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt #libreria para graficar
+# . . .
+# Aca , crear la matriz y resolver el sistema para calcular a, b y c .
+# . . .
+xx = np.array([1, 2, 3])
+yy = np.array([1, 2, 0])
+x = np.linspace(0, 4, 100) #genera 100 puntos equiespaciados entre 0 y 4.
+f = lambda t: a∗t∗∗2+b∗t+c #esto genera una funcion f de t .
+plt.plot (xx, yy, ’∗’)
+plt.plot (x , f(x))
+plt.show ()
+```
+> Para encontrar los coeficientes de la parábola tenemos que evaluar en los puntos que nos dan, como nos dan 3 puntos, nos quedará un sistema de tres ecuaciones con tres incógnitas.
+>
+> - Para el punto $(1, 1)$: nos queda $1 = a + b + c$
+> - Para el punto $(2, 2)$: nos queda $2 = 4a + 2b+c$
+> - Para el punto $(3, 0)$: nos queda $0 = 9a + 3b + c$
+>
+> Lo escribimos como matriz y triangulamos:
+>
+> $$ \begin{bmatrix}
+  1 & 1 & 1 & | & 1 \\
+  4 & 2 & 1 & | & 2 \\
+  9 & 3 & 1 & | & 0
+  \end{bmatrix} $$
+>
+> Hacemos $f_2 - 4f_1$ y $f_3 - 9f_1$
+>
+> $$ \begin{bmatrix}
+  1 & 1 & 1 & | & 1 \\
+  0 & -2 & -3 & | & -2 \\
+  0 & -6 & -8 & | & -9
+  \end{bmatrix} $$
+>
+> Hacemos $f_3 - 3f_2$
+>
+> $$ \begin{bmatrix}
+  1 & 1 & 1 & | & 1 \\
+  0 & -2 & -3 & | & -2 \\
+  0 & 0 & 1 & | & -3
+  \end{bmatrix} $$
+>
+> - De la tercera ecuación obtenemos que $c = -3$
+> - De la segunda tenemos que $-2b + 9 = -2 \Rightarrow b = \frac{11}{2}$
+> - De la primera ecuación tenemos que $a + \frac{11}{2} - 3 = 1 \Rightarrow a = -\frac{5}{2}$
+
+> En el archivo [practica1.ipynb](/Guias-Ejercicios/Practica1/practica1.ipynb) está verificado el resultado, me da lo mismo :)
+
+## 5) Encontrar sistema de generadores
+
+Encontrar un sistema de generadores para los siguientes espacios vectoriales:
+
+1. $\{ (x, y, z) \in \mathbb{R}: x+y-z=0; x-y=0 \} $  
+2. $\{ A \in \mathbb{C}^{3 \times 3}: A = -A^{t} \} $
+3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \} $
+4. $\{ x \in \mathbb{C}^4: x_1 + x_2 - ix_4 = 0, ix_1+ (1+i)x_2-x_3=0 \} $
