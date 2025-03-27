@@ -343,12 +343,14 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 	>
 	> Nos queda el siguiente sistema de ecuaciones:
 	>
-	> $$S=\begin{cases}
-		{\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2} \\
-		{-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1} \\
-		{2\lambda_{1}  - \lambda_{3} = 3} \\
-		{\lambda_{1} - \lambda_{2} - \lambda_{3} = 5}
-		\end{cases} $$
+	> $$ S =
+		\begin{cases} 
+		\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2 \\ 
+		-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1 \\ 
+		2\lambda_{1} - \lambda_{3} = 3 \\ 
+		\lambda_{1} - \lambda_{2} - \lambda_{3} = 5 
+		\end{cases}
+		$$
 	>
 	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
 
