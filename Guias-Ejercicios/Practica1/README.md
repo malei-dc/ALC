@@ -341,16 +341,17 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 	>
 	> $$(x_1, x_2, x_3, x_4) = Z_{1}(1,−1, 2, 1) + Z_{2}(3, 1, 0,−1) + Z_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
 	>
-	> Nos queda el siguiente sistema de ecuaciones:
+	> Nos queda el siguiente sistema de ecuaciones que podemos representar con la siguiente matriz:
 	>
-  	>$$(a)
-\begin{cases}
-x_1 + x_2 - 2x_3 + x_4 = -2 \\
-3x_1 - 2x_2 + x_3 + 5x_4 = 3 \\
-x_1 - x_2 + x_3 + 2x_4 = 2
-\end{cases}$$
+	> $$ \begin{bmatrix}
+  1 & 3 & 1 & | & 2 \\
+  -1 & 1 & 1 & | & 1 \\
+  2 & 0 & -1 & | & 3 \\
+  1 & -1 & -1 & | & 5
+  \end{bmatrix} $$
 	>
-  	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
+	>
+  	> Ahora toca y resolver el sistema triangulando:
 
 
 2. Determinar si $\{ x \in \mathbb{R}^4/x1 − x2 − x3 = 0 \} \subseteq S$.
