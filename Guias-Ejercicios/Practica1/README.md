@@ -2,7 +2,7 @@
 
 ## 1) Sistema de ecuaciones no homogéneos
 
-Resolver los siguientes sistemas de ecuaciones lineales no homogéneos y los sistemas homogéneos asociados en $\mathbb{R}$ o en $\mathbb{C}$. Si la solución es única, puede verificarse el resultado en Python utilizando el comando ```np. linalg . solve1.```
+Resolver los siguientes sistemas de ecuaciones lineales no homogéneos y los sistemas homogéneos asociados en $\mathbb{R}$ o en $\mathbb{C}$. Si la solución es única, puede verificarse el resultado en Python utilizando el comando ```np. linalg . solve```.
 
 $$(a)
 \begin{cases}
@@ -339,16 +339,16 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 	>
 	> Verificamos si existe una combinación lineal para $S$:
 	>
-	> $$(x_1, x_2, x_3, x_4) = \lambda_{1}(1,−1, 2, 1) + \lambda_{2}(3, 1, 0,−1) + \lambda_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
+	> $$(x_1, x_2, x_3, x_4) = Z_{1}(1,−1, 2, 1) + Z_{2}(3, 1, 0,−1) + Z_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
 	>
 	> Nos queda el siguiente sistema de ecuaciones:
 	>
 	> $$ S =
 		\begin{cases} 
-		\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2 \\ 
-		-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1 \\ 
-		2\lambda_{1} - \lambda_{3} = 3 \\ 
-		\lambda_{1} - \lambda_{2} - \lambda_{3} = 5 
+		Z_{1} + 3 Z_{2} + Z_{3} = 2 \\ 
+		-Z_{1} + Z_{2} + Z_{3} = 1 \\ 
+		2 Z_{1} - Z_{3} = 3 \\ 
+		Z_{1} - Z_{2} - Z_{3} = 5 
 		\end{cases}
 		$$
 	>
