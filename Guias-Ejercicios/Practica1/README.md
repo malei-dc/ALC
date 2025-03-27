@@ -316,7 +316,7 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 	> - De $x-y = 0 \Rightarrow x = y = \frac{z}{2}$
 	> - Reemplazamos en la primera: $y + y -z = 0 \Rightarrow y = \frac{z}{2}$
 	>
-	> De solución nos queda que: $(x, y, z) = (\frac{z}{2}, \frac{z}{2}, z) = z(\frac{1}{2}, \frac{1}{2}, 1) \Rightarrow S = \lang(\frac{1}{2}, \frac{1}{2}, 1)\rang$ 
+	> De solución nos queda que: $(x, y, z) = (\frac{z}{2}, \frac{z}{2}, z) = z(\frac{1}{2}, \frac{1}{2}, 1) \Rightarrow S = \langle(\frac{1}{2}, \frac{1}{2}, 1)\rangle$ 
 
 2. $\{ A \in \mathbb{C}^{3 \times 3}: A = -A^{t} \} $
 3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \} $
@@ -327,11 +327,11 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 	> - De la primera ecuación despejo: $x_1 + x_2 - ix_4 = 0 \Rightarrow x_1 = ix_4 - x_2$ 
 	> - Reemplazo en la otra ecuación: $i(ix_4 - x2)+ (1+i)x_2-x_3=0 \Rightarrow x_3 = -x_4 + x_2$
 	>
-	> De solución nos queda que $(x_1, x_2, x_3, x_4) = (ix_4 - x_2, x_2, -x_4 + x_2, x_4) = x_2(-1, 1, 1, 0) + x_4(i, 0, -1, 1) \Rightarrow S = \lang (-1, 1, 1, 0),(i, 0, -1, 1)\rang$
+	> De solución nos queda que $(x_1, x_2, x_3, x_4) = (ix_4 - x_2, x_2, -x_4 + x_2, x_4) = x_2(-1, 1, 1, 0) + x_4(i, 0, -1, 1) \Rightarrow S = \langle (-1, 1, 1, 0),(i, 0, -1, 1)\rangle$
 
 ## 6) Conversiones de generadores
 
-Sea $S = \lang (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rang \subseteq \mathbb{R}^4$.
+Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subseteq \mathbb{R}^4$.
 
 1. Determinar si $(2, 1, 3, 5) \in S$
 
@@ -344,11 +344,11 @@ Sea $S = \lang (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rang \subseteq \
 	> Nos queda el siguiente sistema de ecuaciones:
 	>
 	> $$S=\begin{cases}
-		\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2 \\
-		-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1 \\
-		2\lambda_{1}  - \lambda_{3} = 3 \\
-		\lambda_{1} - \lambda_{2} - \lambda_{3} = 5
-		\end{cases}$$
+		{\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2} \\
+		{-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1} \\
+		{2\lambda_{1}  - \lambda_{3} = 3} \\
+		{\lambda_{1} - \lambda_{2} - \lambda_{3} = 5}
+		\end{cases} $$
 	>
 	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
 
