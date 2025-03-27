@@ -344,12 +344,12 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 	> Nos queda el siguiente sistema de ecuaciones:
 	>
 	>$$S=\begin{cases} 
-Z_1 + 3Z_2 + Z_3 = 2 \\ 
--Z_1 + Z_2 + Z_3 = 1 \\ 
-2Z_1 - Z_3 = 3 \\ 
-Z_1 - Z_2 - Z_3 = 5 
-\end{cases}$$
-	>
+  Z_1 + 3Z_2 + Z_3 = 2 \\ 
+  -Z_1 + Z_2 + Z_3 = 1 \\ 
+  2Z_1 - Z_3 = 3 \\ 
+  Z_1 - Z_2 - Z_3 = 5 
+  \end{cases}$$
+	
 	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
 
 
