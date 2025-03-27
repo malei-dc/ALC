@@ -358,7 +358,29 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 2 & 0 & -1 & | & 3 \\ 
 1 & -1 & -1 & | & 5
 \end{bmatrix} $$
-
+>
+> - Hacemos: $f_2+f_1, f_3-2f_1, f_4-f_1 $
+>
+> $$ \begin{bmatrix} 
+1 & 3 & 1 & | & 2 \\ 
+0 & 4 & 2 & | & 3 \\
+0 & -6 & -3 & | & -1 \\ 
+0 & -4 & -2 & | & 3
+\end{bmatrix} $$
+>
+> - Si hacemos $f_4 + f_2$ nos queda:
+>
+> $$ \begin{bmatrix} 
+1 & 3 & 1 & | & 2 \\ 
+0 & 4 & 2 & | & 3 \\
+0 & -6 & -3 & | & -1 \\ 
+0 & 0 & 0 & | & 6
+\end{bmatrix} $$
+>
+> La última fila nos queda una inconsistencia, por lo tanto concluimos que $(2, 1, 3, 5) \notin S$
 
 2. Determinar si $\{ x \in \mathbb{R}^4/x1 − x2 − x3 = 0 \} \subseteq S$.
+
+> Tengo que escribir a $S$ como ecuacion? o tengo que reemplazar los vectores de $S$ en la ecuación a ver si dan?
+
 3. Determinar si $S \subseteq \{x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \}$.
