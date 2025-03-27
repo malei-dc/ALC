@@ -349,8 +349,7 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 		-Z_{1} + Z_{2} + Z_{3} = 1 \\ 
 		2 Z_{1} - Z_{3} = 3 \\ 
 		Z_{1} - Z_{2} - Z_{3} = 5 
-		\end{cases}
-		$$
+		\end{cases}$$
 	>
 	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
 
