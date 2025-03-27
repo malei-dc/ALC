@@ -339,15 +339,15 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 	>
 	> Verificamos si existe una combinación lineal para $S$:
 	>
-	> $$(x_1, x_2, x_3, x_4) = \lambda_{1}(1,−1, 2, 1) + \lambda_{2}(3, 1, 0,−1) + \lambda_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
+	> $$(x_1, x_2, x_3, x_4) = Z_{1}(1,−1, 2, 1) + Z_{2}(3, 1, 0,−1) + Z_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
 	>
 	> Nos queda el siguiente sistema de ecuaciones:
 	>
 	>$$S=\begin{cases} 
-	\lambda_1 + 3\lambda_2 + \lambda_3 = 2 \\ 
-	-\lambda_1 + \lambda_2 + \lambda_3 = 1 \\ 
-	2\lambda_1 - \lambda_3 = 3 \\ 
-	\lambda_1 - \lambda_2 - \lambda_3 = 5 
+	Z_1 + 3Z_2 + Z_3 = 2 \\ 
+	-Z_1 + Z_2 + Z_3 = 1 \\ 
+	2Z_1 - Z_3 = 3 \\ 
+	Z_1 - Z_2 - Z_3 = 5 
 	\end{cases}$$
 	>
 	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
