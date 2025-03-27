@@ -309,7 +309,49 @@ plt.show ()
 
 Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 
-1. $\{ (x, y, z) \in \mathbb{R}: x+y-z=0; x-y=0 \} $  
+1. $\{ (x, y, z) \in \mathbb{R}^3: x+y-z=0; x-y=0 \} $  
+
+	> Intento despejar las ecuaciones que pueda:
+	>
+	> - De $x-y = 0 \Rightarrow x = y = \frac{z}{2}$
+	> - Reemplazamos en la primera: $y + y -z = 0 \Rightarrow y = \frac{z}{2}$
+	>
+	> De solución nos queda que: $(x, y, z) = (\frac{z}{2}, \frac{z}{2}, z) = z(\frac{1}{2}, \frac{1}{2}, 1) \Rightarrow S = \lang(\frac{1}{2}, \frac{1}{2}, 1)\rang$ 
+
 2. $\{ A \in \mathbb{C}^{3 \times 3}: A = -A^{t} \} $
 3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \} $
 4. $\{ x \in \mathbb{C}^4: x_1 + x_2 - ix_4 = 0, ix_1+ (1+i)x_2-x_3=0 \} $
+	
+	> Intento despejar las ecuaciones que pueda:
+	>
+	> - De la primera ecuación despejo: $x_1 + x_2 - ix_4 = 0 \Rightarrow x_1 = ix_4 - x_2$ 
+	> - Reemplazo en la otra ecuación: $i(ix_4 - x2)+ (1+i)x_2-x_3=0 \Rightarrow x_3 = -x_4 + x_2$
+	>
+	> De solución nos queda que $(x_1, x_2, x_3, x_4) = (ix_4 - x_2, x_2, -x_4 + x_2, x_4) = x_2(-1, 1, 1, 0) + x_4(i, 0, -1, 1) \Rightarrow S = \lang (-1, 1, 1, 0),(i, 0, -1, 1)\rang$
+
+## 6) Conversiones de generadores
+
+Sea $S = \lang (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rang \subseteq \mathbb{R}^4$.
+
+1. Determinar si $(2, 1, 3, 5) \in S$
+
+	> Para determinarlo podemos escribir $S$ pasandolo a ecuaciones y ver si el vector $(2, 1, 3, 5)$ satisface ese sistema de ecuaciones.
+	>
+	> Verificamos si existe una combinación lineal para $S$:
+	>
+	> $$(x_1, x_2, x_3, x_4) = \lambda_{1}(1,−1, 2, 1) + \lambda_{2}(3, 1, 0,−1) + \lambda_{3}(1, 1,−1,−1) = (2, 1, 3, 5)$$
+	>
+	> Nos queda el siguiente sistema de ecuaciones:
+	>
+	> $$S=\begin{cases}
+		\lambda_{1} + 3\lambda_{2} + \lambda_{3} = 2 \\
+		-\lambda_{1} + \lambda_{2} + \lambda_{3} = 1 \\
+		2\lambda_{1}  - \lambda_{3} = 3 \\
+		\lambda_{1} - \lambda_{2} - \lambda_{3} = 5
+		\end{cases}$$
+	>
+	> Ahora toca representarlo como matriz y resolver el sistema triangulando:
+
+
+2. Determinar si $\{ x \in \mathbb{R}^4/x1 − x2 − x3 = 0 \} \subseteq S$.
+3. Determinar si $S \subseteq \{x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \}$.
