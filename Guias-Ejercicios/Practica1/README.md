@@ -337,6 +337,7 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 \end{bmatrix}$$
 >
 > Luego la consigna nos pide que:
+>
 > $$A = -A^t \Rightarrow \begin{bmatrix} 
 a & b & c \\ 
 d & e & f \\ 
