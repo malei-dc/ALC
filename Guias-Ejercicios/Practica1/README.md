@@ -311,23 +311,56 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 
 1. $\{ (x, y, z) \in \mathbb{R}^3: x+y-z=0; x-y=0 \} $  
 
-	> Intento despejar las ecuaciones que pueda:
-	>
-	> - De $x-y = 0 \Rightarrow x = y = \frac{z}{2}$
-	> - Reemplazamos en la primera: $y + y -z = 0 \Rightarrow y = \frac{z}{2}$
-	>
-	> De solución nos queda que: $(x, y, z) = (\frac{z}{2}, \frac{z}{2}, z) = z(\frac{1}{2}, \frac{1}{2}, 1) \Rightarrow S = \langle(\frac{1}{2}, \frac{1}{2}, 1)\rangle$ 
+> Intento despejar las ecuaciones que pueda:
+>
+> - De $x-y = 0 \Rightarrow x = y = \frac{z}{2}$
+> - Reemplazamos en la primera: $y + y -z = 0 \Rightarrow y = \frac{z}{2}$
+>
+> De solución nos queda que: $(x, y, z) = (\frac{z}{2}, \frac{z}{2}, z) = z(\frac{1}{2}, \frac{1}{2}, 1) \Rightarrow S = \langle(\frac{1}{2}, \frac{1}{2}, 1)\rangle$ 
 
-2. $\{ A \in \mathbb{C}^{3 \times 3}: A = -A^{t} \} $
-3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \} $
+2. $\{ A \in \mathbb{C}^{3 \times 3}: A = -A^{t} \}$
+
+>  Supongamos que tenemos la siguiente matriz:
+>
+> $$ A = \begin{bmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+  \end{bmatrix} $$
+>
+> La matriz traspuesta de $A$ es poner su columna como filas
+>
+> $ A^t = \begin{bmatrix}
+  a & d & g \\
+  b & e & h \\
+  c & f & i
+  \end{bmatrix} $ y $A^t = \begin{bmatrix} -a & -d & -g \\ -b & -e & -h \\  -c & -f & -i  \end{bmatrix}$
+>
+> Luego la consigna nos pide que $A = -A^t \Rightarrow \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i\end{bmatrix} = \begin{bmatrix} -a & -d & -g \\ -b & -e & -h \\  -c & -f & -i  \end{bmatrix}$
+>
+> - Notamos que en la diagonal nos queda que $a = -a \Rightarrow a = 0$, y así lo mismo para los elementos en la diagonal.
+> - Si igualamos la parte de la diagonal inferior de la matriz nos queda los mismos elementos de la diagonal superior pero opuestos.
+>
+> Nos queda algo como:
+>
+> $$ \begin{bmatrix} 0 & b & c \\ -b & 0 & f \\  -c & -f & 0  \end{bmatrix} = b * \begin{bmatrix} 0 & 1 & 0 \\ -1 & 0 & 0 \\  0 & 0 & 0  \end{bmatrix} + c * \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\  -1 & 0 & 0  \end{bmatrix} + f * \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\  0 & -1 & 0  \end{bmatrix}$$
+>
+> Entonces los generadores son las matrices que quedan multiplicando:
+>
+> $$Sol = \langle\begin{bmatrix} 0 & 1 & 0 \\ -1 & 0 & 0 \\  0 & 0 & 0  \end{bmatrix},  \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\  -1 & 0 & 0  \end{bmatrix}, \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\  0 & -1 & 0  \end{bmatrix}\rangle$$
+
+3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \}$
+
+>
+
 4. $\{ x \in \mathbb{C}^4: x_1 + x_2 - ix_4 = 0, ix_1+ (1+i)x_2-x_3=0 \} $
 	
-	> Intento despejar las ecuaciones que pueda:
-	>
-	> - De la primera ecuación despejo: $x_1 + x_2 - ix_4 = 0 \Rightarrow x_1 = ix_4 - x_2$ 
-	> - Reemplazo en la otra ecuación: $i(ix_4 - x2)+ (1+i)x_2-x_3=0 \Rightarrow x_3 = -x_4 + x_2$
-	>
-	> De solución nos queda que $(x_1, x_2, x_3, x_4) = (ix_4 - x_2, x_2, -x_4 + x_2, x_4) = x_2(-1, 1, 1, 0) + x_4(i, 0, -1, 1) \Rightarrow S = \langle (-1, 1, 1, 0),(i, 0, -1, 1)\rangle$
+> Intento despejar las ecuaciones que pueda:
+>
+> - De la primera ecuación despejo: $x_1 + x_2 - ix_4 = 0 \Rightarrow x_1 = ix_4 - x_2$ 
+> - Reemplazo en la otra ecuación: $i(ix_4 - x2)+ (1+i)x_2-x_3=0 \Rightarrow x_3 = -x_4 + x_2$
+>
+> De solución nos queda que $(x_1, x_2, x_3, x_4) = (ix_4 - x_2, x_2, -x_4 + x_2, x_4) = x_2(-1, 1, 1, 0) + x_4(i, 0, -1, 1) \Rightarrow S = \langle (-1, 1, 1, 0),(i, 0, -1, 1)\rangle$
 
 ## 6) Conversiones de generadores
 
