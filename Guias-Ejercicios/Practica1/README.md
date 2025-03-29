@@ -330,10 +330,23 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 >
 > La matriz traspuesta de $-A$ es poner su columna como filas
 >
-> $$-A^t = \begin{bmatrix} -a & -d & -g \\ -b & -e & -h \\  -c & -f & -i  \end{bmatrix}$$
+> $$-A^t = \begin{bmatrix} 
+-a & -d & -g \\ 
+-b & -e & -h \\  
+-c & -f & -i  
+\end{bmatrix}$$
 >
 > Luego la consigna nos pide que:
-> $$A = -A^t \Rightarrow \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i\end{bmatrix} = \begin{bmatrix} -a & -d & -g \\ -b & -e & -h \\  -c & -f & -i  \end{bmatrix}$$
+> $$A = -A^t \Rightarrow \begin{bmatrix} 
+a & b & c \\ 
+d & e & f \\ 
+g & h & i
+\end{bmatrix} = 
+\begin{bmatrix} 
+-a & -d & -g \\ 
+-b & -e & -h \\  
+-c & -f & -i  
+\end{bmatrix}$$
 >
 > - Notamos que en la diagonal nos queda que $a = -a \Rightarrow a = 0$, y así lo mismo para los elementos en la diagonal.
 > - Si igualamos la parte de la diagonal inferior de la matriz nos queda los mismos elementos de la diagonal superior pero opuestos.
@@ -363,7 +376,21 @@ Encontrar un sistema de generadores para los siguientes espacios vectoriales:
 >
 > Entonces los generadores son las matrices que quedan multiplicando:
 >
-> $$Sol = \langle \begin{bmatrix} 0 & 1 & 0 \\ -1 & 0 & 0 \\  0 & 0 & 0  \end{bmatrix},  \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\  -1 & 0 & 0  \end{bmatrix}, \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\  0 & -1 & 0  \end{bmatrix}\rangle$$
+> $$Sol = \begin{bmatrix} 
+0 & 1 & 0 \\ 
+-1 & 0 & 0 \\  
+0 & 0 & 0  
+\end{bmatrix},  
+\begin{bmatrix} 
+0 & 0 & 1 \\ 
+0 & 0 & 0 \\  
+-1 & 0 & 0  
+\end{bmatrix}, 
+\begin{bmatrix} 
+0 & 0 & 0 \\ 
+0 & 0 & 1 \\  
+0 & -1 & 0  
+\end{bmatrix}$$
 
 3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \}$
 
