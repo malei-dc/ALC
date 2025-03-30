@@ -349,8 +349,8 @@ g & h & i
 -c & -f & -i  
 \end{bmatrix}$$
 >
-> - Notamos que en la diagonal nos queda que $a = -a \Rightarrow a = 0$, y así lo mismo para los elementos en la diagonal.
-> - Si igualamos la parte de la diagonal inferior de la matriz nos queda los mismos elementos de la diagonal superior pero opuestos.
+> - Notamos que en la diagonal nos queda que $a = -a \Rightarrow a = 0$, y así lo mismo para todos los elementos.
+> - Si igualamos la parte de la diagonal inferior izquierda de la matriz nos queda los mismos elementos de la diagonal superior derecha pero opuestos.
 >
 > Nos queda algo como:
 >
@@ -395,7 +395,15 @@ g & h & i
 
 3. $\{ A \in \mathbb{C}^{3 \times 3}: tr(A) = 0 \}$
 
+>  Supongamos que tenemos la siguiente matriz:
 >
+> $$ A = \begin{bmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+  \end{bmatrix} $$
+>
+> Emm solo sé que $a+e+i = 0$ ... Help
 
 4. $\{ x \in \mathbb{C}^4: x_1 + x_2 - ix_4 = 0, ix_1+ (1+i)x_2-x_3=0 \} $
 	
@@ -456,8 +464,34 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 >
 > La última fila nos queda una inconsistencia, por lo tanto concluimos que $(2, 1, 3, 5) \notin S$
 
-2. Determinar si $\{ x \in \mathbb{R}^4/x1 − x2 − x3 = 0 \} \subseteq S$.
+2. Determinar si $T = \{ x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \} \subseteq S$.
 
-> Tengo que escribir a $S$ como ecuacion? o tengo que reemplazar los vectores de $S$ en la ecuación a ver si dan?
+> Si $T \subseteq S$ quiere decir que cualquier vector que satisface $T$ debe poder expresarse como combinación lineal de los vectores de $S$. De la ecuación de $T$ sale que $x_1=x_2+x_3$ entonces tenemos que $(x_2 + x_3, x_2, x_3, x_4) = x_2(1, 1, 0, 0) + x_3(1, 0, 1, 0) + x_4(0, 0, 0, 1)$ donde cada vector forman una base para $T$.
+>
+> Si queremos ver que el subespacio de $T \subseteq S$, los vectores de la base de $T$ tienen que escribirse como combinación lineal de $S$. Así que planteo el sistema de ecuaciones con $S$ escribiendo los vectores que lo componen como columna, asociando a la base de $T$ y los resuelvo para los tres vectores a la vez.
+>
+> $$ \begin{bmatrix} 
+1 & 3 & 1 & | & 1 & 1 & 0\\ 
+-1 & 1 & 1 & | & 1 & 0 & 0\\
+2 & 0 & -1 & | & 0 & 1 & 0\\ 
+1 & -1 & -1 & | & 0 & 0 & 1
+\end{bmatrix}  \Rightarrow f_2+f_1, f_3-2f_1, f_4-f_1 
+\begin{bmatrix} 
+1 & 3 & 1 & | & 1 & 1 & 0\\ 
+0 & 4 & 2 & | & 2 & 1 & 0\\
+0 & -6 & -3 & | & -2 & -1 & 0\\ 
+0 & -4 & -2 & | & -1 & -1 & 1
+\end{bmatrix} $$
+>
+>$$\Rightarrow f_4 + f_2
+\begin{bmatrix} 
+1 & 3 & 1 & | & 1 & 1 & 0\\ 
+0 & 4 & 2 & | & 2 & 1 & 0\\
+0 & -6 & -3 & | & -2 & -1 & 0\\ 
+0 & 0 & 0 & | & 1 & 1 & 1
+\end{bmatrix}
+$$ 
+>
+> Como la última ecuación da una inconsistencia, no tenemos solución para el sistema de ecuaciónes, por lo tanto no se puede expresar a $T$ como combinación lineal de $S$, luego $T \subsetneq S$
 
 3. Determinar si $S \subseteq \{x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \}$.
