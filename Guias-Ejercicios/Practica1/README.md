@@ -466,9 +466,9 @@ Sea $S = \langle (1,−1, 2, 1), (3, 1, 0,−1), (1, 1,−1,−1)\rangle \subset
 
 2. Determinar si $T = \{ x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \} \subseteq S$.
 
-> Si $T \subseteq S$ quiere decir que cualquier vector que satisface $T$ debe poder expresarse como combinación lineal de los vectores de $S$. De la ecuación de $T$ sale que $x_1=x_2+x_3$ entonces tenemos que $(x_2 + x_3, x_2, x_3, x_4) = x_2(1, 1, 0, 0) + x_3(1, 0, 1, 0) + x_4(0, 0, 0, 1)$ donde cada vector forman una base para $T$.
+> Si $T \subseteq S$ quiere decir que cualquier vector que satisface $T$ debe poder expresarse como combinación lineal de los vectores de $S$. De la ecuación de $T$ sale que $x_1=x_2+x_3$ entonces tenemos que $(x_2 + x_3, x_2, x_3, x_4) = x_2(1, 1, 0, 0) + x_3(1, 0, 1, 0) + x_4(0, 0, 0, 1)$ donde forman un conjunto de vectores que es una base para $T$.
 >
-> Si queremos ver que el subespacio de $T \subseteq S$, los vectores de la base de $T$ tienen que escribirse como combinación lineal de $S$. Así que planteo el sistema de ecuaciones con $S$ escribiendo los vectores que lo componen como columna, asociando a la base de $T$ y los resuelvo para los tres vectores a la vez.
+> Si queremos ver que el subespacio de $T \subseteq S$, los vectores de la base de $T$ tienen que escribirse como combinación lineal de $S$. Así que planteo el sistema de ecuaciones poniendo los vectores de $S$ como columna, asociando a la base de $T$ y los resuelvo para los tres vectores a la vez.
 >
 > $$ \begin{bmatrix} 
 1 & 3 & 1 & | & 1 & 1 & 0\\ 
@@ -495,3 +495,101 @@ $$
 > Como la última ecuación da una inconsistencia, no tenemos solución para el sistema de ecuaciónes, por lo tanto no se puede expresar a $T$ como combinación lineal de $S$, luego $T \subsetneq S$
 
 3. Determinar si $S \subseteq \{x \in \mathbb{R}^4/x_1 − x_2 − x_3 = 0 \}$.
+
+> Acá es al revés del ejercicio anterior, si quiero ver que $S \subseteq T$ quiere decir que cualquier vector que satisface $S$ se puede escribir como combinación lineal de $T$. Aprovechando las cuentas anteriores planteo el matriz asociado al sistema de ecuaciones de $T$ junto a los vectores de $S$.
+>
+> $$ \begin{bmatrix} 
+1 & 1 & 0 & | & 1 & 3 & 1 \\ 
+1 & 0 & 0 & | & -1 & 1 & 1 \\
+0 & 1 & 0 & | & 2 & 0 & -1 \\ 
+0 & 0 & 1 & | & 1 & -1 & -1
+\end{bmatrix} \Rightarrow f_2 - f_1 
+\begin{bmatrix} 
+1 & 1 & 0 & | & 1 & 3 & 1 \\ 
+0 & -1 & 0 & | & -2 & -2 & 0 \\
+0 & 1 & 0 & | & 2 & 0 & -1 \\ 
+0 & 0 & 1 & | & 1 & -1 & -1
+\end{bmatrix} \Rightarrow f_3+f_2
+\begin{bmatrix} 
+1 & 1 & 0 & | & 1 & 3 & 1 \\ 
+0 & -1 & 0 & | & -2 & -2 & 0 \\
+0 & 0 & 0 & | & 0 & -2 & -1 \\ 
+0 & 0 & 1 & | & 1 & -1 & -1
+\end{bmatrix}$$
+>
+> Como la terceraa ecuación da una inconsistencia, no tenemos solución para el sistema de ecuaciónes, por lo tanto no se puede expresar a $S$ como combinación lineal de $T$, luego $S \subsetneq T$
+
+## 7) Cuentas con generadores
+
+Hallar un sistema de generadores para $S \cap T$ y para $S + T$ como subespacios de $V$, y determinar si la suma es directa en cada uno de los siguientes casos:
+
+1. $V = \mathbb{R}^3, S = \{(x, y, z) : 3x − 2y + z = 0\} \text{ y } T = \{(x, y, z) : x + z = 0 \}$
+
+> - $S \cap T$: como están dado por ecuaciones, la intersección es que se cumplan ambas formulas. De la fórmula en $T$ obtenemos que $x = -z$. Reemplazando en la otra tenemos que $-3z-2y+z = 0 \Rightarrow y = -z$. Entonces nos queda que $(x, y, z) = z(-1,-1,1) \Rightarrow sol=\langle (-1,-1,1) \rangle$
+> - $S+T$: los pasamos a generadores y los apilamos en la solución. En este caso es suma directa.
+>
+> $$S = (x, y, 2y-3x) = x(1, 0, -3) + y(0, 1, 2) = \langle (1,0,-3), (0,1,2) \rangle$$
+>
+> $$T = (-z, y, z) = y(0,1,0) + z(-1,0,1) = \langle (0,1,0), (-1,0,1) \rangle$$
+>
+> $$S+T = \langle (1,0,-3), (0,1,2), (0,1,0), (-1,0,1) \rangle$$
+>
+
+2. $V = \mathbb{R}^3, S = \{(x, y, z) : 3x − 2y + z = 0, x − y = 0\} \text{ y } T = \langle (1, 1, 0), (5, 7, 3)\rangle$
+
+> - $S \cap T$: escribo los generadores como combinación lineal, en este caso tengo
+>
+> $$t \in T \Rightarrow t = \alpha(1,1,0) + \beta(5,7,3) = (\alpha + 5 \beta, \alpha + 7 \beta, 3 \beta)= (x, y ,z)$$
+>
+> $$\text{Despejando las ecuaciones de }S \text{ nos queda: } 3y-2y+z = 0 \Rightarrow y + z = 0$$
+>
+> $$\text{Le pido que } t \text{ esté en }S \Rightarrow y+z = 0 \Rightarrow \alpha+ 7 \beta + 3 \beta = 0 \Rightarrow \alpha = -10\beta$$
+>
+> $$\Rightarrow t = ( -10\beta + 5 \beta,  -10\beta + 7 \beta, 3 \beta) = (-5 \beta, -3\beta, 3 \beta) = \beta (-5,-3,3) \Rightarrow S \cap T = \langle (-5,-3,3) \rangle$$
+>
+> - $S + T$: paso $S$ a generadores, de la operaciónes anteriores sale que $x = y$ y luego que $z = -y$. La suma nos queda directo.
+>
+> $$S = \langle (1,1,-1) \rangle \Rightarrow S + T = \langle (1,1,-1), (1, 1, 0), (5, 7, 3)\rangle$$
+
+3. $V = \mathbb{R}^3, S = \langle(1, 1, 3), (1, 3, 5), (6, 12, 24)\rangle, T = \langle(1, 1, 0), (3, 2, 1)\rangle$
+
+> - $S+T$: aprovecho que están ambos con generadores, y que $(6,12,24)=6(1,2,4)$ así que son equivalentes. Puede que tenga info redundante, no importa, la suma es esa.
+>
+> $$S+T = \langle (1, 1, 3), (1, 3, 5), (1, 2, 4), (1, 1, 0), (3, 2, 1)\rangle$$
+>
+> - $S \cap T$: para calcular esto puedo escribirlo como combinación lineal de los generadores de ambas ecuaciones, por lo que debemos encontrar las solciones de
+>
+> $$\alpha_1 (1,1,3) + \alpha_2 (1,3,5) + \alpha_3 (1,2,4) = \beta_1 (1,1,0) + \beta_2 (3,2,1)$$
+>
+> $$\alpha_1 (1,1,3) + \alpha_2 (1,3,5) + \alpha_3 (1,2,4) - \beta_1 (1,1,0) - \beta_2 (3,2,1) = 0$$
+>
+> $$\begin{bmatrix} 
+1 & 1 & 1 & -1 & -3 & | & 0 \\ 
+1 & 3 & 2 & -1 & -2 & | & 0 \\
+3 & 5 & 4 & 0 & -1 & | & 0 
+\end{bmatrix} \Rightarrow f_2 - f_1, f_3 - 3f_1
+\begin{bmatrix} 
+1 & 1 & 1 & -1 & -3 & | & 0 \\ 
+0 & 2 & 1 & 0 & 1 & | & 0 \\
+0 & 2 & 4 & 1 & 8 & | & 0 
+\end{bmatrix} \Rightarrow f_3-f_2
+\begin{bmatrix} 
+1 & 1 & 1 & -1 & -3 & | & 0 \\ 
+0 & 2 & 1 & 0 & 1 & | & 0 \\
+0 & 0 & 3 & 1 & 7 & | & 0 
+\end{bmatrix}$$
+>
+> 1. De la tercera ecuación obtenemos que $3\alpha_3 + \beta_1 + 7\beta_2 = 0 \Rightarrow \beta_1 = -3\alpha_1-7\beta_2$
+> 2. De la segunda ecuación obtenemos que $2\alpha_2 + \alpha_3 + \beta_2 = 0 \Rightarrow \alpha_3 = -\beta_2 - 2\alpha_2 \Rightarrow \alpha_3 = 5\beta_2 + 8\alpha_1$
+> 3. Reemplazando en la primera ecuación tenemos que $\alpha_1 +\alpha_2 + (-\beta_2 - 2\alpha_2)-(-3\alpha_1-7\beta_2) -3\beta_2 = 4\alpha_1-\alpha_2 + 3\beta_2 = 0 \Rightarrow \alpha_2 = -4\alpha_1-3\beta_2$
+>
+>     Reemplazamos las expresiones obtenidas en:
+>
+> $$v =\alpha_1 (1,1,3) + \alpha_2 (1,3,5) + \alpha_3 (1,2,4) = \beta_1 (1,1,0) + \beta_2 (3,2,1)$$
+>
+> $$v = \alpha_1 (1,1,3) + (-4\alpha_1-3\beta_2) (1,3,5) + (5\beta_2 + 8\alpha_1) (1,2,4) = (-3\alpha_1-7\beta_2) (1,1,0) +  \beta_2 (3,2,1)$$
+>
+> Muchas cuentas uwu
+
+4. $V = \mathbb{R}^{3 \times 3}, S = \{(x_{ij}) / x_{ij} = x_{ji} \forall i, j\}, T = \{(x_{ij}) / x_{11} + x_{12} + x_{13} = 0\}$
+5. $V = \mathbb{C}^3, S = \langle (i, 1, 3 − i), (4, 1 − i, 0) \rangle, T = \{x ∈ \mathbb{C}^3 : (1 − i)x_1 − 4x_2 + x_3 = 0\}$
