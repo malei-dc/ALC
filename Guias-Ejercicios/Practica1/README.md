@@ -593,3 +593,125 @@ Hallar un sistema de generadores para $S \cap T$ y para $S + T$ como subespacios
 
 4. $V = \mathbb{R}^{3 \times 3}, S = \{(x_{ij}) / x_{ij} = x_{ji} \forall i, j\}, T = \{(x_{ij}) / x_{11} + x_{12} + x_{13} = 0\}$
 5. $V = \mathbb{C}^3, S = \langle (i, 1, 3 − i), (4, 1 − i, 0) \rangle, T = \{x ∈ \mathbb{C}^3 : (1 − i)x_1 − 4x_2 + x_3 = 0\}$
+
+## 8) Buscar k
+
+Determinar todos los $k \in \mathbb{R}$ para los cuales:
+
+1. $\langle(−2, 1, 6), (3, 0,−8)\rangle = \langle(1, k, 2k), (−1,−1, k^2 − 2), (1, 1, k)\rangle$
+
+> Hay una igualdad de subespacios, lo que significa que la dimensión tienen que coincidir, en el subespacio de la derecha se ve que es LI, ya que si hacemos $2f_2 + 3f_1$ la segunda fila nos queda que $(0, 3, 2)$ confirmando mi afirmación. Entonces como es de dimensión 2 el otro subespacio también tiene que tener la misma dimensión. Ubicamos los vectores en fila y triangulo (se nos tiene que anular una fila):
+>
+> $$\begin{bmatrix} 
+1 & k & 2k \\ 
+-1 & -1 & k^2-2 \\
+1 & 1 & k 
+\end{bmatrix} \Rightarrow f_3+f_2
+\begin{bmatrix} 
+1 & k & 2k \\ 
+-1 & -1 & k^2-2 \\
+0 & 0 & k^2+k-2 
+\end{bmatrix}$$
+>
+> Si factorizamos el polinomio que nos queda en la segunda fila:
+>
+> $$k^2+k-2 = (k+2)(k-1)$$
+>
+> Queda claro que el polinomio se anula en sus raices, en este caso son $k = 1 \land k = -2$. Nos queda que:
+>
+> $$\langle(−2, 1, 6), (3, 0,−8)\rangle =
+\begin{cases}
+\langle(1, 1, 2), (−1,−1, -1), (1, 1, 1)\rangle = \langle(1, 1, 2), (1, 1, 1)\rangle & \text { si } k = 1   \\
+\langle(1, -2, -4), (−1,−1, 2), (1, 1, -2)\rangle = \langle(1, -2, -4), (1, 1, -2)\rangle & \text { si } k = -2
+\end{cases}$$
+>
+> Que un subespacio sea igual que otra quiere decir que se puede escribir como combinación lineal de la otra. Entonces pongo cada vector como columnas de ambos subespacios y triangulo para ver que sucede:
+>
+> - Caso $k = 1:$
+>
+> $$\begin{bmatrix} 
+-2 & 3 & | & 1 & 1\\ 
+1 & 0 & | & 1 & 1 \\
+6 & -8 & | & 2 & 1 
+\end{bmatrix} \Rightarrow f_1 * \frac{1}{2} 
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+1 & 0 & | & 1 & 1 \\
+6 & -8 & | & 2 & 1 
+\end{bmatrix} \Rightarrow f_2 + f_1, f_3+6f_1
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+0 & 3/2 & | & 3/2 & 3/2 \\
+0 & 1 & | & 5 & 4 
+\end{bmatrix} \Rightarrow f_2 * \frac{2}{3}
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+0 & 1 & | & 1 & 1 \\
+0 & 1 & | & 5 & 4 
+\end{bmatrix}$$
+>
+>$$\Rightarrow f_3-f_2
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+0 & 1 & | & 1 & 1 \\
+0 & 0 & | & 4 & 3 
+\end{bmatrix}$$
+> 
+> La tercera fila representa la ecuacion $4x_1 + 3x_2 =0$, la triangulación me dio que es inconsistente, si hubiese $0 = 0$ tendriamos una dependencia lineal y los subespacio serían iguales, puedo concluir que no son iguales con esto? PREGUNTAR!
+>
+> - Caso $k = -2$
+>
+> $$\begin{bmatrix} 
+-2 & 3 & | & 1 & 1\\ 
+1 & 0 & | & -2 & 1 \\
+6 & -8 & | & -4 & -2 
+\end{bmatrix} \Rightarrow f_1 * \frac{1}{2} 
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+1 & 0 & | & -2 & 1 \\
+6 & -8 & | & -4 & -2 
+\end{bmatrix} \Rightarrow f_2 + f_1, f_3+6f_1
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+0 & 3/2 & | & -3/2 & 3/2 \\
+0 & 1 & | & -1 & 1 
+\end{bmatrix} \Rightarrow f_2 * \frac{2}{3}
+\begin{bmatrix} 
+-1 & 3/2 & | & 1/2 & 1/2\\ 
+0 & 1 & | & -1 & 1 \\
+0 & 1 & | & -1 & 1 
+\end{bmatrix}$$
+>
+> Observamos que las dos últimas filas son iguales, lo que indica que hay una fila redundante, sugiere que el sistema es compatible y dependiente. Esto confirma que los dos conjuntos de vectores generan subespacios de la misma dimensión y que los generadores del segundo conjunto pueden expresarse como combinaciones lineales de los del primero.
+>
+> Cumple para $k = -2$, consultar 1
+
+2. $S \cap T = \langle(0, 1, 1)\rangle \text{ siendo } S = \{x \in \mathbb{R} : x_1 + x_2 − x_3 = 0 \} \text{ y } T = \langle(1, k, 2), (−1, 2, k)\rangle$
+
+> Para que $(0, 1, 1) \in T$ tiene que tener solución, así que lo esctibimos como matriz y triangulamos:
+>
+> $$\begin{bmatrix} 
+1 & -1 & | & 0\\ 
+k & 2 & | & 1 \\
+2 & k & | & 1 
+\end{bmatrix} \Rightarrow f_2 - kf_1 \text{ con } k \neq 0, f_3 - 2f_1
+\begin{bmatrix} 
+1 & -1 & | & 0\\ 
+0 & 2 +k & | & 1 \\
+0 & k+2 & | & 1 
+\end{bmatrix}$$
+>
+> La ultima fila se me anula, entonces el sistema queda compatible si $k \neq -2$, y para el caso de $k=0$ veamos:
+>
+> $$\begin{bmatrix} 
+1 & -1 & | & 0\\ 
+0 & 2 & | & 1 \\
+2 & 0 & | & 1 
+\end{bmatrix} \Rightarrow f_3 - 2f_2
+\begin{bmatrix} 
+1 & -1 & | & 0\\ 
+0 & 2 & | & 1 \\
+0 & 2 & | & 1 
+\end{bmatrix}$$
+>
+> Tambien nos queda que es compatible, por lo tanto $(0, 1, 1) \in T$ si $k \neq -2$
