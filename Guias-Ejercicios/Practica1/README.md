@@ -922,3 +922,17 @@ Sean $v_1, . . . , v_k \in \mathbb{R}^n$. Probar que {$v_1, . . . , v_k$} es L.I
 Sean $m, n \text{ y } r \in \mathbb{N}$.
 
 1. Probar que si $A \in K^{m \times n}$ satisface que $Ax = 0 \forall x \in K^n$ entonces $A = 0$. Deducir que si $A, B \in K^{m\times n}$ satisfacen que $Ax = Bx \forall x \in K^n$ entonces $A = B$.
+
+    > La idea de esto es que si $A$ anula todos los vectores $x$, incluso los canónicos, entonces todos los productos fila por columna tienen que dar 0 y eso implica que $A = 0$.
+    >
+    > d/ tenemos que $A \in K^{m \times n}$ satisface que $Ax = 0 \forall x \in K^n$. Vamos a probar con los vectores canónicos ya que tiene la propiedad de que son una base de $K^n$ y permite "observar" una columna a la vez. Sea $e_j \in K^n$ el vector canónico con un 1 en posición $j$ y ceros el resto. Entonces $A_{e_j}$ es la j-esima columna de $A$.
+    >
+    > Pero por hipótesis $A_{e_j} = 0$ para todo $j = 1,..., n$. Entonces todas las columnas son 0 y por lo tanto $A = 0$.
+    >
+    > Conclusiones:
+    >
+    > - Si $Ax=0$ para todo $x$, entonces la única posibilidad es que la matriz sea nula.
+    > - Si dos matrices actúan igual sobre todos los vectores, entonces son iguales pues:
+    > $$Ax - Bx = 0, \forall x \in K^n \Rightarrow (A-B)x = 0, \forall x \in K^n \Rightarrow \text{ (aplicando lo anterior) } A-B=0 \Rightarrow A = B$$
+
+2. Probar que si $A \in K^{m\times n}, B ∈ Kn×r$ con $B = (b_{ij})$ y, para $1 \leq j \leq r$, $B_j = \begin{bmatrix}b_{1j} \\ ... \\ b_{nj} \end{bmatrix}$ es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es decir, AB_j es la columna $j$-ésima de $AB$).
