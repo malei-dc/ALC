@@ -657,7 +657,7 @@ Determinar todos los $k \in \mathbb{R}$ para los cuales:
 0 & 0 & | & 4 & 3 
 \end{bmatrix}$$
 > 
-> La tercera fila representa la ecuacion $4x_1 + 3x_2 =0$, la triangulación me dio que es inconsistente, si hubiese $0 = 0$ tendriamos una dependencia lineal y los subespacio serían iguales, puedo concluir que no son iguales con esto? PREGUNTAR!
+> La tercera fila representa la ecuacion $4x_1 + 3x_2 =0$, la triangulación me dio que es inconsistente, si hubiese $0 = 0$ tendriamos una dependencia lineal y los subespacio serían iguales, puedo concluir que no son iguales con esto? PREGUNTAR! Si, que no hayan dando que son dependiente linealmente es que existe una dirección que no está representado con los vectores de la igualdad, por lo tanto no son iguales.
 >
 > - Caso $k = -2$
 >
@@ -684,7 +684,7 @@ Determinar todos los $k \in \mathbb{R}$ para los cuales:
 >
 > Observamos que las dos últimas filas son iguales, lo que indica que hay una fila redundante, sugiere que el sistema es compatible y dependiente. Esto confirma que los dos conjuntos de vectores generan subespacios de la misma dimensión y que los generadores del segundo conjunto pueden expresarse como combinaciones lineales de los del primero.
 >
-> Cumple para $k = -2$, consultar 1
+> Cumple para $k = -2$
 
 2. $S \cap T = \langle(0, 1, 1)\rangle \text{ siendo } S = \{x \in \mathbb{R} : x_1 + x_2 − x_3 = 0 \} \text{ y } T = \langle(1, k, 2), (−1, 2, k)\rangle$
 
@@ -715,3 +715,210 @@ k & 2 & | & 1 \\
 \end{bmatrix}$$
 >
 > Tambien nos queda que es compatible, por lo tanto $(0, 1, 1) \in T$ si $k \neq -2$
+
+## 9) La unión no genera un subespacio, pero...
+
+Sean $S$ y $T$ subespacios de un $K$-espacio vectorial $V$ . Probar que $S \cup T$ es un subespacio de $V \Leftrightarrow  S \subseteq T$ o $T \subseteq S$.
+
+> - $\Leftarrow)$ si $S \subseteq T$ o $T \subseteq S$, entonces $S \cup T$ es un subespacio:
+>
+>   - Si $S \subseteq T$ entonces $S \cup T = T$ ya que todos los elementos de $S$ están en $T$ y sabemos por hipótesis que $T$ es subespacio.
+>   - Si $T \subseteq S$ entonces $S \cup T = S$ ya que todos los elementos de $T$ están en $S$ y sabemos por hipótesis que $S$ es subespacio.
+>
+>   En ambos casos la unión es igual a uno de los subespacios, por lo tanto se cumple.
+>
+> - $\Rightarrow)$ Suponemos que $S \cup T$ es un subespacio de $V$ y queremos probar que entonces $S \subseteq T$ o $T \subseteq S$.
+>
+>   Lo vamos a probar por el absurdo: supongamos que ninguno está contenido dentro del otro. Entonces existen 
+>
+>   - $s \in S - T$
+>   - $t \in T - S$
+>
+>   Como $S \cup T$ es un subespacio debe ser cerrado bajo la suma y el producto por escalar, pero centremonos en la suma, por eso tenemos que $s+t \in S \cup T$, lo que no da dos posible casos:
+>
+>   1. Caso 1: $s+t \in S$:
+>
+>       Entonces $s+t \in S$, como tambien sabemos que $s \in S$ podemos restarlo $(s+t)-s = t \in S$, **ABS!** pues $t \notin S$
+>
+>   2. Caso 2: $s+t \in T$:
+>
+>       Entonces $s+t \in T$, como tambien sabemos que $t \in T$ podemos restarlo $(s+t)-t = s \in T$, **ABS!** pues $s \notin T$
+>
+> Ambos casos nos llevaron al absurdo por lo tanto se debe cumplir que $S \subseteq T$ o $T \subseteq S$. La idea que nos da esto es que para que una unión de dos subespacios resulte en subespacio del mismo $V$ es necesario que uno de los dos subespacio esté contenido en otra.
+
+## 10) Indepedencia lineal
+
+Decidir si los siguientes conjuntos son linealmente independientes sobre $K$. Cuando no lo sean, escribir a uno de ellos como combinación lineal de los otros.
+
+1. {(1, 4,−1, 3) , (2, 1,−3,−1) , (0, 2, 1,−5)} en $\mathbb{R}^4$, para $K = \mathbb{R}$.
+
+> Tenemos que ver indepedencia linea, ponemos los vectores en linea y triangulamos.
+>
+> $$\begin{bmatrix} 
+1 & 4 & -1 & 3\\ 
+2 & 1 & -3 & -1 \\
+0 & 2 & 1 & -5 
+\end{bmatrix} \Rightarrow f_2 - 2f_1
+\begin{bmatrix} 
+1 & 4 & -1 & 3\\ 
+0 & -7 & -1 & -7 \\
+0 & 2 & 1 & -5 
+\end{bmatrix} \Rightarrow \frac{1}{7}f_2
+\begin{bmatrix} 
+1 & 4 & -1 & 3\\ 
+0 & -1 & -1/7 & -1 \\
+0 & 2 & 1 & -5 
+\end{bmatrix}$$
+>
+> $$\Rightarrow f_3+2f_2 \begin{bmatrix} 
+1 & 4 & -1 & 3\\ 
+0 & -1 & -1/7 & -1 \\
+0 & 0 & 5/7 & -7 
+\end{bmatrix}$$
+>
+> Quedó triangulado, no se anuló ninguna fila, es LI
+
+2. {(1 − i, i) , (2,−1 + i)} en $\mathbb{C}^2$, para $K = \mathbb{C}$.
+
+> Hacemos lo mismo:
+>
+> $$\begin{bmatrix} 
+1 -i & i \\ 
+2 & -1 + i 
+\end{bmatrix} \Rightarrow f_2 - (1+i)f_1
+\begin{bmatrix} 
+1 -i & i \\ 
+0 & 0 
+\end{bmatrix}$$
+>
+> Calculos Aux: 
+>
+> - Necesito que $f_2 - \alpha f_1 \rightarrow f_2$ para que se anule la fila 2, propongo $\alpha = \frac{2}{1-i}$ y racionalizo
+>
+> $$\alpha = \frac{2}{1-i}. \frac{1+i}{1+i} = \frac{2(1+i)}{2} = 1+i$$
+>
+> Se nos anula una fila, por lo tanto son linealmente dependientes, la segunda fila se escribe como combinación lineal con respecto a la primera de la forma:
+>
+> $$(2, -1+i) = (1+i) * (1-i, i)$$
+
+## 11) Extracción de bases
+
+Extraer una base de $S$ de cada uno de los siguientes sistemas de generadores y hallar la dimensión de $S$. Extender la base de $S$ a una base del espacio vectorial correspondiente.
+
+1. $S = \langle(1, 1, 2), (1, 3, 5), (1, 1, 4), (5, 1, 1)\rangle \subseteq \mathbb{R}^3, K = \mathbb{R}$
+
+> Para que un sistema de generadores sea una base necesita cumplir dos cosas:
+>
+> - Que los vectores sean LI
+> - Que generen todo el espacio vectorial al que pertenece. (en este caso $\mathbb{R}^3$)
+>
+> A simple vista vemos que tenemos 4 vectores para generar $\mathbb{R}^3$ donde sabemos que alcanza con 3, entonces intuyo que sobra un vector. Vemos la indepedencia lineal poniendo los vectores en filas y triangulando:
+>
+>$$\begin{bmatrix} 
+1 & 1 & 2 \\
+1 & 3 & 5 \\
+1 & 1 & 4 \\
+5 & 1 & 1
+\end{bmatrix} \Rightarrow f_2-f_1, f_3-f_1, f_4-5f_1 
+\begin{bmatrix} 
+1 & 1 & 2 \\
+0 & 2 & 3 \\
+0 & 0 & 2 \\
+0 & -4 & -9
+\end{bmatrix} \Rightarrow f_4+2f_2
+\begin{bmatrix} 
+1 & 1 & 2 \\
+0 & 2 & 3 \\
+0 & 0 & 2 \\
+0 & 0 & -3
+\end{bmatrix} \Rightarrow f_4 * 2$$
+>
+> $$\begin{bmatrix} 
+1 & 1 & 2 \\
+0 & 2 & 3 \\
+0 & 0 & 2 \\
+0 & 0 & -6
+\end{bmatrix} \Rightarrow f_4 + 3f_3
+\begin{bmatrix} 
+1 & 1 & 2 \\
+0 & 2 & 3 \\
+0 & 0 & 2 \\
+0 & 0 & 0
+\end{bmatrix}$$
+>
+> Se nos anuló la cuarta fila, lo que significa que se puede escribir como combinación lineal con respecto a las primeras 3. Así que para formar una base elegimos los 3 primeros.
+>
+> $$S = \langle (1, 1, 2), (1, 3, 5), (1, 1, 4) \rangle$$ 
+>
+> En este caso no es necesario extender la base ya que estamos en $\mathbb{R}^3$ y tenemos 3 vectores LI que son base.
+
+2. $S = \langle(1, 1, 1, 1), (0, i, 1, 1), (0, i, 0, 0), (1, 1, 0, 0)\rangle \subseteq \mathbb{C}^{2 \times 2}, K = \mathbb{C}$
+
+> No escribí los vectores en forma de matriz $2\times 2$ pero es análogo, me facilita para triangular y checkear independencia lineal.
+>
+> Hacemos lo mismo:
+>
+> $$\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+0 & i & 1 & 1 \\
+0 & i & 0 & 0 \\
+1 & 1 & 0 & 0
+\end{bmatrix} \Rightarrow f_4 - f_1 
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+0 & i & 1 & 1 \\
+0 & i & 0 & 0 \\
+0 & 0 & -1 & -1
+\end{bmatrix} \Rightarrow f_3 - f_2 
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+0 & i & 1 & 1 \\
+0 & 0 & -1 & -1 \\
+0 & 0 & -1 & -1
+\end{bmatrix}$$ 
+>
+> $$\Rightarrow
+\begin{bmatrix}
+1 & 1 & 1 & 1 \\
+0 & i & 1 & 1 \\
+0 & 0 & -1 & -1 \\
+0 & 0 & 0 & 0
+\end{bmatrix}$$
+>
+> Nos quedó 3 vectores LI, pero para generar todo el espacio vectorial de $2 \times 2$ necesito 4 vectores, agrego uno que sea LI con los anteriores, por ejemplo uso $(0,0,0,1)$ para extender la base.
+>
+>  $$S = \langle (1, 1, 1, 1), (0, i, 1, 1), (0, i, 0, 0), (0, 0, 0, 1) \rangle$$ 
+
+## 12) Independencia lineal en distintos cuerpos
+
+Sean $v_1, . . . , v_k \in \mathbb{R}^n$. Probar que {$v_1, . . . , v_k$} es L.I. sobre $\mathbb{R} \Leftrightarrow$  {$v_1, . . . , v_k$} es L.I. sobre $\mathbb{C}$.
+
+> - $\Rightarrow )$ Si son L.I. en $\mathbb{R}$, entonces son L.I. en $\mathbb{C}$
+>
+>   Que sea Linealmente independientes quiere decir que:
+>
+>   $$\sum_{i=1}^k \alpha_i v_i = 0 \Rightarrow v_1,...,v_k = 0$$
+>
+>   Supongamos que tenemos $z_1 v_1+...+z_k v_z = 0$ con $z_i \in \mathbb{C}$. Escribimos cada $z_i = a_i + b_i i$ con $a_i, b_i \in \mathbb{R}$. Entonces:
+>
+>   $$\sum_{i=1}^k (a_i + b_i i) v_i = 0$$
+>
+>   Separando parte real e imaginario nos queda:
+>
+>   $$(\sum_{i=1}^k a_i v_i)  +  i(\sum_{i=1}^k b_i v_i)= 0$$
+>
+>   Esto implica que:
+>
+>   $$\sum_{i=1}^k a_i v_i = 0  \text{ y que }  \sum_{i=1}^k b_i v_i= 0$$
+>
+>   Pero como los $v_i$ son L.I. en $\mathbb{R}$, eso significa que $a_i = b_i = 0 \Rightarrow z_i = a_i + b_i i = 0$. Nos queda que la única combinación lineal compleja que da 0 es la trivial, por lo tanto es L.I. tambien en $\mathbb{C}$
+>
+> - $\Leftarrow )$ Si son L.I. en $\mathbb{C}$, entonces son L.I. en $\mathbb{R}$
+>
+>   si hay una combinación lineal real que los anula, entonces es también una combinación compleja que los anula. Pero como supusimos que son L.I. en $\mathbb{C}$, eso sólo pasa si todos los coeficientes son 0 que tambien son reales. Por lo tanto son también L.I. en $\mathbb{R}$
+
+## 13) Propiedades sobre matriz
+
+Sean $m, n \text{ y } r \in \mathbb{N}$.
+
+1. Probar que si $A \in K^{m \times n}$ satisface que $Ax = 0 \forall x \in K^n$ entonces $A = 0$. Deducir que si $A, B \in K^{m\times n}$ satisfacen que $Ax = Bx \forall x \in K^n$ entonces $A = B$.
