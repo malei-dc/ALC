@@ -935,4 +935,8 @@ Sean $m, n \text{ y } r \in \mathbb{N}$.
     > - Si dos matrices actúan igual sobre todos los vectores, entonces son iguales pues:
     > $$Ax - Bx = 0, \forall x \in K^n \Rightarrow (A-B)x = 0, \forall x \in K^n \Rightarrow \text{ (aplicando lo anterior) } A-B=0 \Rightarrow A = B$$
 
-2. Probar que si $A \in K^{m\times n}, B ∈ Kn×r$ con $B = (b_{ij})$ y, para $1 \leq j \leq r$, $B_j = \begin{bmatrix}b_{1j} \\ ... \\ b_{nj} \end{bmatrix}$ es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es decir, AB_j es la columna $j$-ésima de $AB$).
+2. Probar que si $A \in K^{m\times n}, B ∈ Kn×r$ con $B = (b_{ij})$ y, para $1 \leq j \leq r$, $B_j = \begin{bmatrix} 
+b_{1j} \\ 
+... \\ 
+b_{nj} \end{bmatrix}$ 
+es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es decir, AB_j es la columna $j$-ésima de $AB$).
