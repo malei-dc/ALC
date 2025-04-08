@@ -891,7 +891,7 @@ Extraer una base de $S$ de cada uno de los siguientes sistemas de generadores y 
 
 ## 12) Independencia lineal en distintos cuerpos
 
-Sean $v_1, . . . , v_k \in \mathbb{R}^n$. Probar que {$v_1, . . . , v_k$} es L.I. sobre $\mathbb{R} \Leftrightarrow$  {$v_1, . . . , v_k$} es L.I. sobre $\mathbb{C}$.
+Sean $v_1, . . . , v_k \in \mathbb{R}^n$. Probar que { $v_1, . . . , v_k$ } es L.I. sobre $\mathbb{R} \Leftrightarrow$  { $v_1, . . . , v_k$ } es L.I. sobre $\mathbb{C}$.
 
 > - $\Rightarrow )$ Si son L.I. en $\mathbb{R}$, entonces son L.I. en $\mathbb{C}$
 >
@@ -940,7 +940,7 @@ es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es de
 
 ## 15) Calcular bases
 
-Dadas las bases de $\mathbb{R}^3$, $B =$ {$(1, 1, 0), (0, 1, 1), (1, 0, 1)$} y $B´=$ {$(−1, 1, 1), (2, 0, 1), (1,−1, 3)$}
+Dadas las bases de $\mathbb{R}^3$, $B =$ {(1, 1, 0), (0, 1, 1), (1, 0, 1)} y $B´=$ {(−1, 1, 1), (2, 0, 1), (1,−1, 3)}
 
 1. Calcular $[(1, 1, 0)]_B$ y $[(1, 1, 0)]_{B´}$
 
