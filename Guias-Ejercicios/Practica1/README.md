@@ -936,4 +936,70 @@ Sean $m, n \text{ y } r \in \mathbb{N}$.
     > $$Ax - Bx = 0, \forall x \in K^n \Rightarrow (A-B)x = 0, \forall x \in K^n \Rightarrow \text{ (aplicando lo anterior) } A-B=0 \Rightarrow A = B$$
 
 2. Probar que si $A \in K^{m\times n}, B ∈ Kn×r$ con $B = (b_{ij})$ y, para $1 \leq j \leq r$, $B_j = (b_{1j}, ...,b_{nj})$ 
-es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es decir, AB_j es la columna $j$-ésima de $AB$).
+es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es decir, $AB_j$ es la columna $j$-ésima de $AB$).
+
+## 15) Calcular bases
+
+Dadas las bases de $\mathbb{R}^3$, $B =$ {$(1, 1, 0), (0, 1, 1), (1, 0, 1)$} y $B´=$ {$(−1, 1, 1), (2, 0, 1), (1,−1, 3)$}
+
+1. Calcular $[(1, 1, 0)]_B$ y $[(1, 1, 0)]_{B´}$
+
+> - $[(1, 1, 0)]_B$: lo tenemos que calcular teniendo la base $B$, lo que significa que tenemos que buscar una combinación linea de la base que sea igual a $(1, 1, 0)$. (o sea, las coordenadas)
+> 
+>   Queremos encontrar $a,b,c \in \mathbb{R}$ tales que: $a(1,1,0)+b(0,1,1)+c(1,0,1) = (1,1,0)$, desarrollamos:
+>
+>     $$(a,a,0)+(0,b,b)+(c,0,c) = (1,1,0)$$
+>
+>     $$(a+c,a+b,b+c) = (1,1,0)$$
+>
+>     - De la tercera ecuación tenemos: $b = -c$
+>     - Sustituimos en la primera: $a-b=1$
+>     - Y en la segunda: $a+b =1$
+>     - Si ahora sumamos la primera con la segunda tenemos que: 
+>
+>         $$a+b+a-b = 1+1$$
+>
+>         $$2a = 2 \Rightarrow a = 1$$
+>
+>     - De la segunda ecuación reemplazamos a: $b = 0$
+>     - De la primera obtenemos $b = -c = 0$
+>
+>     El resultado nos queda: $[(1, 1, 0)]_B = (1,0,0)$
+
+> - $[(1, 1, 0)]_{B´}$: hacemos lo mismo, queremos encontrar $a,b,c \in \mathbb{R}$ tales que:
+>
+>     $$a(−1, 1, 1)+b(2, 0, 1)+c(1,−1, 3)=(1,1,0)$$
+>
+>     $$(−a, a, a)+(2b, 0, b)+(c,−c, 3c)=(1,1,0)$$
+>
+>     $$(-a+2b+c,a-c,a+b+3c)=(1,1,0)$$ 
+>
+>   Lo representamos como matriz y triangulamos:
+>
+> $$\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+1 & 0 & -1 & | & 1 \\
+1 & 1 & 3 & | & 0
+\end{bmatrix} \Rightarrow f_2 + f_1, f_3 + f_1
+\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+0 & 2 & 0 & | & 2 \\
+0 & 3 & 4 & | & 1
+\end{bmatrix}$$
+>
+>   $$ \Rightarrow f_3 - \frac{3}{2}f_2
+\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+0 & 2 & 0 & | & 2 \\
+0 & 0 & 4 & | & -2
+\end{bmatrix}$$
+>
+>   - De la tercera ecuación nos queda que $c = -\frac{1}{2}$
+>   - De la segunda $b = 1$ 
+>   - De la primera $-a + 2b + c = 1 \Rightarrow -a + 2 + \frac{-1}{2} = 1 \Rightarrow a = \frac{1}{2}$
+>
+>  El resultado nos queda: $[(1, 1, 0)]_{B´} = (\frac{1}{2},1,-\frac{1}{2})$
+
+
+2. Calcular la matriz de cambio de base $C(B, B')$
+3. Comprobar que $C(B,B')[(1, 1, 0)]_B = [(1, 1, 0)]_{B'}$ .
