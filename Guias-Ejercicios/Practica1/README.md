@@ -942,7 +942,7 @@ es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es de
 
 Dadas las bases de $\mathbb{R}^3$, $B =$ {(1, 1, 0), (0, 1, 1), (1, 0, 1)} y $B´=$ {(−1, 1, 1), (2, 0, 1), (1,−1, 3)}
 
-1. Calcular $[(1, 1, 0)]_B$ y $[(1, 1, 0)]_{B´}$
+1. Calcular $[(1, 1, 0)]_{B}$ y $[(1, 1, 0)]_{B´}$
 
 > - $[(1, 1, 0)]_B$: lo tenemos que calcular teniendo la base $B$, lo que significa que tenemos que buscar una combinación linea de la base que sea igual a $(1, 1, 0)$. (o sea, las coordenadas)
 > 
@@ -1000,6 +1000,106 @@ Dadas las bases de $\mathbb{R}^3$, $B =$ {(1, 1, 0), (0, 1, 1), (1, 0, 1)} y $B�
 >
 >  El resultado nos queda: $[(1, 1, 0)]_{B´} = (\frac{1}{2},1,-\frac{1}{2})$
 
-
 2. Calcular la matriz de cambio de base $C(B, B')$
-3. Comprobar que $C(B,B')[(1, 1, 0)]_B = [(1, 1, 0)]_{B'}$ .
+
+> ---
+> Solo por curiosidad:
+>
+> Para hacer cambio de base $B \rightarrow B´$ armamos los matrices de cambio $P_B$ y $P_{B´}$ que es básicamente poner las bases en columnas:
+>
+> $$P_B = \begin{bmatrix}
+1 & 0 & 1 \\
+1 & 1 & 0 \\
+0 & 1 & 1 
+\end{bmatrix}
+P_{B´} = \begin{bmatrix}
+-1 & 2 & 1 \\
+1 & 0 & -1 \\
+1 & 1 & 3 
+\end{bmatrix}$$
+>
+> Para hacer el cambio de base es: 
+>
+> $$[x]_{B´} = P_{B´}^{-1} . P_B . [x]_B$$
+>---
+>
+> Lo que queremos acá es la **matriz** de cambio de base $(P_{B´ \leftarrow B})$, que se obtiene haciendo:
+>
+> 1. Escribimos cada vector de la base $B$ como combinación lineal de la base $B´$
+> 2. Las coordenadas obtenidas se usan como columnas.
+>
+> $B =$ {(1, 1, 0), (0, 1, 1), (1, 0, 1)} y $B´=$ {(−1, 1, 1), (2, 0, 1), (1,−1, 3)}
+>
+> Entonces basicamente necesito calcular la matriz:
+>
+> $$P_{B´ \leftarrow B} = [[(1, 1, 0)]_{B´}, [(0, 1, 1)]_{B´},[(1, 0, 1)]_{B´}]$$
+>
+> - Ya tenemos el primero calculado pues $(1, 1, 0)]_{B´} = (\frac{1}{2},1,-\frac{1}{2})$
+> - $(0,1,1)_{B´}$: 
+>
+> $$\begin{bmatrix}
+-1 & 2 & 1 & | & 0 \\
+1 & 0 & -1 & | & 1 \\
+1 & 1 & 3 & | & 1
+\end{bmatrix} \Rightarrow f_2 + f_1, f_3 + f_1
+\begin{bmatrix}
+-1 & 2 & 1 & | & 0 \\
+0 & 2 & 0 & | & 1 \\
+0 & 3 & 4 & | & 1
+\end{bmatrix}$$
+>
+> $$ \Rightarrow f_3 - \frac{3}{2}f_2
+\begin{bmatrix}
+-1 & 2 & 1 & | & 0 \\
+0 & 2 & 0 & | & 1 \\
+0 & 0 & 4 & | & -1/2
+\end{bmatrix}$$
+>
+> De la tercela fila tenemos que $c = -\frac{1}{8}$, de la segunda fila $b = \frac{1}{2}$ y de la primera fila $-a + 2(\frac{1}{2}) + -\frac{1}{8} \Rightarrow a = \frac{7}{8}$
+>
+> $$(0,1,1)_{B´} = (\frac{7}{8}, \frac{1}{2}, -\frac{1}{8})$$
+>
+> - $(1,0,1)_{B´}$: 
+>
+> $$\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+1 & 0 & -1 & | & 0 \\
+1 & 1 & 3 & | & 1
+\end{bmatrix} \Rightarrow f_2 + f_1, f_3 + f_1
+\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+0 & 2 & 0 & | & 1 \\
+0 & 3 & 4 & | & 2
+\end{bmatrix}$$
+>
+> $$ \Rightarrow f_3 - \frac{3}{2}f_2
+\begin{bmatrix}
+-1 & 2 & 1 & | & 1 \\
+0 & 2 & 0 & | & 1 \\
+0 & 0 & 4 & | & 1/2
+\end{bmatrix}$$
+>
+> De la tercera fila sale que $c = \frac{1}{8}$ y de la segunda sale que $b = \frac{1}{2}$, de la primera tenemos que $-a + 1 + \frac{1}{8} \Rightarrow a = \frac{9}{8}$
+>
+> $$(1,0,1)_{B´} = (\frac{9}{8}, \frac{1}{2}, \frac{1}{8})$$
+>
+> $$P_{B´ \leftarrow B} = \begin{bmatrix}
+\frac{1}{2} & \frac{7}{8} & \frac{9}{8} \\
+1 & \frac{1}{2} & \frac{1}{2} \\
+-\frac{1}{2} & -\frac{1}{8} & \frac{1}{8}
+\end{bmatrix}$$
+
+3. Comprobar que $C(B,B')*(1, 1, 0)_{B} = (1, 1, 0)_{B'}$ .
+
+> - $P_{B´ \leftarrow B} = C(B,B')$
+> - $(1, 1, 0)_{B} = (1,0,0)$
+> - $(1, 1, 0)_{B'} = (\frac{1}{2},1,-\frac{1}{2})$
+>
+> $$C(B,B')*(1, 1, 0)_{B} = \begin{bmatrix}
+\frac{1}{2} & \frac{7}{8} & \frac{9}{8} \\
+1 & \frac{1}{2} & \frac{1}{2} \\
+-\frac{1}{2} & -\frac{1}{8} & \frac{1}{8}
+\end{bmatrix} *  \begin{bmatrix}
+1 \\
+0 \\
+0 \end{bmatrix} = (\frac{1}{2},1,-\frac{1}{2}) = (1, 1, 0)_{B'} $$
