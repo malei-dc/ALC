@@ -942,7 +942,7 @@ es la columna $j$-ésima de $B$, entonces $AB = (AB_1 | · · · | AB_r)$ (es de
 
 Dadas las bases de $\mathbb{R}^3$, $B =$ {(1, 1, 0), (0, 1, 1), (1, 0, 1)} y $B´=$ {(−1, 1, 1), (2, 0, 1), (1,−1, 3)}
 
-1. Calcular $[(1, 1, 0)]_{B}$ y $[(1, 1, 0)]_{B´}$
+1. Calcular $(1, 1, 0)_{B}$ y $(1, 1, 0)_{B´}$
 
 > - $[(1, 1, 0)]_B$: lo tenemos que calcular teniendo la base $B$, lo que significa que tenemos que buscar una combinación linea de la base que sea igual a $(1, 1, 0)$. (o sea, las coordenadas)
 > 
@@ -1020,7 +1020,7 @@ P_{B´} = \begin{bmatrix}
 >
 > Para hacer el cambio de base es: 
 >
-> $$[x]_{B´} = P_{B´}^{-1} . P_B . [x]_B$$
+> $$(x)_{B´} = P_{B´}^{-1} . P_B . (x)_B$$
 >---
 >
 > Lo que queremos acá es la **matriz** de cambio de base $(P_{B´ \leftarrow B})$, que se obtiene haciendo:
@@ -1032,7 +1032,7 @@ P_{B´} = \begin{bmatrix}
 >
 > Entonces basicamente necesito calcular la matriz:
 >
-> $$P_{B´ \leftarrow B} = [[(1, 1, 0)]_{B´}, [(0, 1, 1)]_{B´},[(1, 0, 1)]_{B´}]$$
+> $$P_{B´ \leftarrow B} = ((1, 1, 0)_{B´}, (0, 1, 1)_{B´},(1, 0, 1)_{B´})$$
 >
 > - Ya tenemos el primero calculado pues $(1, 1, 0)]_{B´} = (\frac{1}{2},1,-\frac{1}{2})$
 > - $(0,1,1)_{B´}$: 
@@ -1089,13 +1089,13 @@ P_{B´} = \begin{bmatrix}
 -\frac{1}{2} & -\frac{1}{8} & \frac{1}{8}
 \end{bmatrix}$$
 
-3. Comprobar que $C(B,B')*(1, 1, 0)_{B} = (1, 1, 0)_{B'}$ .
+3. Comprobar que $C(B,B') * (1, 1, 0)_B = (1, 1, 0)_{B'}$ .
 
 > - $P_{B´ \leftarrow B} = C(B,B')$
 > - $(1, 1, 0)_{B} = (1,0,0)$
 > - $(1, 1, 0)_{B'} = (\frac{1}{2},1,-\frac{1}{2})$
 >
-> $$C(B,B')*(1, 1, 0)_{B} = \begin{bmatrix}
+> $$C(B,B')*(1, 1, 0)_B = \begin{bmatrix}
 \frac{1}{2} & \frac{7}{8} & \frac{9}{8} \\
 1 & \frac{1}{2} & \frac{1}{2} \\
 -\frac{1}{2} & -\frac{1}{8} & \frac{1}{8}
