@@ -1104,3 +1104,67 @@ P_{B´} = \begin{bmatrix}
 1 \\
 0 \\
 0 \end{bmatrix} = (\frac{1}{2},1,-\frac{1}{2}) = {(1, 1, 0)}{\scriptsize B´}$$
+
+## 16) Propiedades de matrices
+
+Sean $A, A´ \in K^{m\times n}$; $B \in K^{n\times r}$ ; $D,D´ \in K^{n\times n}$ ; $\alpha \in K$. Probar:
+
+1. $(A + A´)^t = A^t + (A´)^t$
+
+    > La matriz traspuesta se obtiene como el resultado de intercambiar filas por columnas. Y como tenemos la suma de matrices podemos desarrollar de la siguiente manera para todo $i, j$ en rango:
+    >
+    > $$(A + A´)^t = (A + A´)_{ji} = A {\scriptsize ji} + A´{\scriptsize ji} = A^t + (A´)^t$$
+
+2. $(\alpha A)^t = αA^t$
+
+	> Acá $\alpha$ es una cte, por lo tanto la operación traspuesta no le afecta.
+	>
+	> $$(\alpha A)^t = (\alpha A)_{ji} = \alpha (A){\scriptsize ji} = \alpha A^t$$
+
+3. $(AB)^t = B^tA^t$
+
+	> Como ahora estamos haciendo un producto de matrices tenemos que tener cuidado con las dimensiones, tenemos que $A \in K^{m\times n}, B \in K^{n\times r}$:
+	>
+	> - $AB \in K^{m \times r}$
+	> - $(AB)^t \in K^{r \times m}$
+	> - $A^t \in K^{n \times m}, B^t \in K^{r \times n}$
+	> - Entonces $B^tA^t \in K^{r \times m}$ así que tienen la misma dimensión.
+	>
+	> Veamos que pasa en ambos lados de las igualdades:
+	>
+	> $$(AB)^t = (AB){\scriptsize ji} = \sum_{k = 1}^n A{\scriptsize jk}B{\scriptsize ki} $$
+	>
+	> $$B^tA^t = \sum_{k=1}^n (B^t){\scriptsize ik}(A^t){\scriptsize kj} = \sum_{k=1}^n B{\scriptsize ki}A{\scriptsize jk} $$
+	>
+	> Nos queda exactamente lo mismo.
+
+4. $AA^t$ y $A^tA$ son matrices simétricas.
+
+	> Usando la propiedad anterior es bastante directo, ya que nos ofrece una especie de "distributiva" de la traspuesta de la matriz.
+	>
+	> $$(AA^t)^t = (A^t)^tA^t = AA^t \text{ y } (A^tA)^t = A^t(A^t)^t = A^tA$$
+	>
+	> Por lo tanto son dos matrices simétricas con respecto a trasponerlas
+
+5. $tr(D +D´) = tr(D) + tr(D´)$
+
+	> Estamos ahora con matrices cuadrado.
+	>
+	> $$tr(D +D´)= \sum_{k=1}^n D{\scriptsize kk}+D´{\scriptsize kk} = \sum_{k=1}^n D{\scriptsize kk} + \sum_{k=1}^n D´{\scriptsize kk} =  tr(D) + tr(D´)$$
+
+6. $tr(\alpha D) = \alpha tr(D)$
+
+	> $$tr(\alpha D) = \sum_{k=1}^n \alpha D{\scriptsize kk} = \alpha \sum_{k=1}^n D{\scriptsize kk} = \alpha tr(D)$$
+
+7. $tr(DD´) = tr(D´D)$
+
+## 17) Subespacios matriciales
+
+Decidir cuáles de los siguientes subconjuntos son subespacios de $R^{n\times n}$ como $\mathbb{R}$-espacio vectorial:
+
+1. $S_1 =$ {$A \in R^{n\times n} : A$ es triangular inferior}
+2. $S_2 =$ {$A \in R^{n\times n} : A$ es simétrica}
+
+## 18) Determinantes
+
+Calcular el determinante de $A$ en cada uno de los siguientes casos:
