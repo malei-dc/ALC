@@ -49,9 +49,9 @@ Determinar cuáles de las siguientes aplicaciones son lineales.
     >   
     >   No tiene pinta que sean lo mismo, buscamos un ejemplo: tomo $A = (1, 2, 3, 4)$ y $B = (5, 6, 7, 8)$ haciendo $A+B = (6,8,10,12)$
     >
-    >   $f(A) = 1 * 4 - 2 * 3 = -2, f(B)= 5*8-6*7=-2 \Rightarrow f(A) + f(B) = -4$
+    >   $$f(A) = 1 \ast 4 - 2 \ast 3 = -2, f(B)= 5 \ast 8-6 \ast 7=-2 \Rightarrow f(A) + f(B) = -4$$
     >
-    >   $f(A+B) = 6*12-8*10 =-8$
+    >   $$f(A+B) = 6\ast 12-8\ast 10 =-8$$
     >
     > Concluimos que el determinante no es una transformación lineal.
 
