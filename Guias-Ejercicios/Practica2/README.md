@@ -24,5 +24,60 @@ Determinar cuáles de las siguientes aplicaciones son lineales.
     > Luego $f$ es una T.L.
 
 2. $f: \mathbb{R}^2 \rightarrow \mathbb{R}^2, f(x1, x2) = (x_1 + x_2, |x_1|)$
-3. $f: R^{2\times 2} → R, f(a_{11}, a_{12}, a_{21}, a_{22}) = a_{11}.a_{22}-a_{12}.a_{21}$
 
+    >- En el $(0,0)$ la función se anula
+    >- Sean $(a,b)$ y $(x,y)$
+    >    - $f((a,b)+(x,y)) = f(a+x, b+y) = (a+x+b+y,|a+x|)$
+    >    - $f(a,b) + f(x,y) = (a+b, |a|) + (x+y, |x|) = (a+b+x+y, |a|+|x|)$
+    >
+    > No es una transfomación lineal ya que si tomo $a = -1$ y $x = 3$:
+    >
+    > $$|a| + |x| = 1 + 3 = 4 \neq 2 = |-1+3| = |a+x| $$
+
+3. $f: R^{2\times 2} → R, f(a_{11}, a_{12}, a_{21}, a_{22}) = a_{11}.a_{22}-a_{12}.a_{21}$ (Es la determinante)
+
+    > ---
+    >
+    > Nota: voy a escribir la matriz en fila por comodidad nomas.
+    >
+    > ---
+    >
+    > - En el $(0,0,0,0)$ la función se anula.
+    > - Sean $(a_{11}, a_{12}, a_{21}, a_{22})$ y $(b_{11}, b_{12}, b_{21}, b_{22})$ vemos si se cumple la suma:
+    >   - $f((a_{11}, a_{12}, a_{21}, a_{22}) + (b_{11}, b_{12}, b_{21}, b_{22})) = f(a_{11} + b_{11}, a_{12} + b_{12}, a_{21} +b_{21}, a_{22} + b_{22}) = (a_{11}+b_{11}).(a_{22}+b_{22}) - (a_{12}+b_{12}).(a_{21}+b_{21})$
+    >   - $f(a_{11}, a_{12}, a_{21}, a_{22}) + f(b_{11}, b_{12}, b_{21}, b_{22}) = (a_{11}.a_{22}-a_{12}.a_{21}) + (b_{11}.b_{22}-b_{12}.b_{21})$
+    >   
+    >   No tiene pinta que sean lo mismo, buscamos un ejemplo: tomo $A = (1, 2, 3, 4)$ y $B = (5, 6, 7, 8)$ haciendo $A+B = (6,8,10,12)$
+    >
+    >   $$f(A) = 1 * 4 - 2 * 3 = -2, f(B)= 5*8-6*7=-2 \Rightarrow f(A) + f(B) = -4$$
+    >
+    >   $$f(A+B) = 6*12-8*10 =-8$$
+    >
+    > Concluimos que el determinante no es una transformación lineal.
+
+4.  $f: R^{2\times 2} → R^{2\times 3}, f(a_{11}, a_{12}, a_{21}, a_{22}) = (a_{22}, 0, a_{12}+a_{21}, 0, a_{11}, a_{22}- a_{11})$
+
+    > - En el $\overset{\rightarrow}{0}$ la función se anula.
+    > - Sea $A=(a_{ij})$, $B=(b_{ij})$ entonces:
+
+    $$f(A+B)= \begin{bmatrix}
+    a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
+    0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
+    \end{bmatrix}$$
+
+    $$f(A) + f(B)= \begin{bmatrix}
+    a_{22} & 0 & a_{12}+a_{21} \\
+    0 & a_{11} & a_{22} + a_{11}
+    \end{bmatrix} + 
+    \begin{bmatrix}
+    b_{22} & 0 & b_{12}+b_{21} \\
+    0 & b_{11} & b_{22} + b_{11}
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
+    0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
+    \end{bmatrix}$$
+
+    > - La multiplicación por escalar tambien se cumple ya que lo puedo "sacar" afuera $\alpha f(A) = f(\alpha A)$
+    > 
+    > Se concluye que $f$ es lineal
