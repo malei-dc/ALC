@@ -58,26 +58,26 @@ Determinar cuáles de las siguientes aplicaciones son lineales.
 4.  $f: R^{2\times 2} → R^{2\times 3}, f(a_{11}, a_{12}, a_{21}, a_{22}) = (a_{22}, 0, a_{12}+a_{21}, 0, a_{11}, a_{22}- a_{11})$
 
     > - En el $\overset{\rightarrow}{0}$ la función se anula.
+    > - La multiplicación por escalar tambien se cumple ya que lo puedo "sacar" afuera $\alpha f(A) = f(\alpha A)$ 
     > - Sea $A=(a_{ij})$, $B=(b_{ij})$ entonces:
 
-    $$f(A+B)= \begin{bmatrix}
-    a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
-    0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
-    \end{bmatrix}$$
+$$f(A+B)= \begin{bmatrix}
+a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
+0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
+\end{bmatrix}$$
 
-    $$f(A) + f(B)= \begin{bmatrix}
-    a_{22} & 0 & a_{12}+a_{21} \\
-    0 & a_{11} & a_{22} + a_{11}
-    \end{bmatrix} + 
-    \begin{bmatrix}
-    b_{22} & 0 & b_{12}+b_{21} \\
-    0 & b_{11} & b_{22} + b_{11}
-    \end{bmatrix} = 
-    \begin{bmatrix}
-    a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
-    0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
-    \end{bmatrix}$$
+$$f(A) + f(B)= \begin{bmatrix}
+a_{22} & 0 & a_{12}+a_{21} \\
+0 & a_{11} & a_{22} + a_{11}
+\end{bmatrix} + 
+\begin{bmatrix}
+b_{22} & 0 & b_{12}+b_{21} \\
+0 & b_{11} & b_{22} + b_{11}
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{22}+b_{22} & 0 & (a_{12}+b_{12})+(a_{21}+b_{21}) \\
+0 & a_{11}+b_{11} & (a_{22}+b_{22})+(a_{11}+b_{11})
+\end{bmatrix}$$
 
-    > - La multiplicación por escalar tambien se cumple ya que lo puedo "sacar" afuera $\alpha f(A) = f(\alpha A)$
-    > 
-    > Se concluye que $f$ es lineal
+>    
+> Se concluye que $f$ es lineal
