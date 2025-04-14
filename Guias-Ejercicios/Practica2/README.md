@@ -139,5 +139,65 @@ sen(t) & cos(t)
 ### 3) Unicidad de t.l
 
 1. Probar que existe una única transformación lineal $f : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $f(1, 1) = (−5, 3)$ y $f(−1, 1) = (5, 2)$. Para dicha $f$, determinar $f(5, 3)$ y $f(−1, 2)$.
+
+> Para probar que existe una única t.l hay que ver que los vectores de entrada forman una base, en este caso son $(1,1), (-1,1)$. Esto es importante ya que si son base, cualquier vector en $\mathbb{R}^2$ puede escribirse como combinación lineal de esos dos, y por lo tanto la t.l queda determinada por alguna combinación lineal sobre la base.
+>
+> A ojo se nota que son base, al ponerlos en fila y triangular, ninguna se anula, por lo que son L.I. Los vectores resultantes de esta triangulación a ojo son: $(1,1), (0, 2)$.
+>
+> - $f(5,3)$: tengo que buscar una combinación lineal, es decir buscamos $a,b$ tal que:
+>
+>   $$a(1,1) + b(-1,1) = (5,3) \Rightarrow (a-b, a+b) = (5,3)$$
+>
+>   Despejando nos queda que $a = 5+b$ y en la segunda ecuación es $5+b +b = 3 \Rightarrow b = -1 \Rightarrow a= 4$
+>
+>   Entonces:
+>
+>   $$f(5,3) = 4f(1,1) + -1f(-1,1) = 4(-5,3) + -1(5,2) = (-25,10)$$
+>
+> - $f(-1,2)$: hacemos lo mismo
+>
+>   $$a(1,1) + b(-1,1) = (-1,2) \Rightarrow (a-b, a+b) = (-1,2)$$
+>
+>   Despejando la primera ecuación $a = -1+b$ y en la segunda $-1+b+b=2 \Rightarrow b = \frac{3}{2} \Rightarrow a = \frac{1}{2}$
+>
+>   $$f(5,3) = \frac{1}{2}f(1,1) + \frac{3}{2}f(-1,1) = \frac{1}{2}(-5,3) + \frac{3}{2}(5,2) = (5,\frac{9}{2})$$
+
 2. ¿Existiría una transformación lineal  $f : \mathbb{R}^2 \rightarrow \mathbb{R}^2$ tal que $f(1, 1) = (2, 6)$, $f(−1, 1) = (2, 1)$ y $f(2, 7) = (5, 3)$?
-3. 
+
+>   $f(2,7)$: hacemos lo mismo, solo con la diferencia que ahora tengo que verificar que dé $(5,3)$
+>
+>   $$a(1,1) + b(-1,1) = (2,7) \Rightarrow (a-b, a+b) = (2,7)$$
+>
+>   Despejando la primera ecuación $a = 2+b$ y en la segunda $2+b+b=7 \Rightarrow b = \frac{9}{2} \Rightarrow a = \frac{13}{2}$
+>
+>   $$f(5,3) = \frac{13}{2}f(1,1) + \frac{9}{2}f(-1,1) = \frac{13}{2}(-5,3) + \frac{9}{2}(5,2) = (-10,\frac{57}{2})$$
+>
+>   Obtenemos que  $f(2, 7)= (-10,\frac{57}{2}) \neq (5, 3)$ no existe una transformación lineal que cumpla las tres condiciones.
+
+3. Sean $f,g : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ t.l. tales que:
+
+    $$f(1, 0, 1) = (1, 2, 1), f(2, 1, 0) = (2, 1, 0), f(−1, 0, 0) = (1, 2, 1), $$
+
+    $$g(1, 1, 1) = (1, 1, 0), g(3, 2, 1) = (0, 0, 1), g(2, 2,−1) = (3,−1, 2). $$
+
+    Determinar si $f=g$.
+
+> Para determinar que $f=g$ necesito verificar que por ejemplo $g(1,1,1) = f(1,1,1) = (1,1,0)$
+>
+> Busco $a,b,c$ tales que:
+>
+> $$a(1,0,1)+ b(2,1,0)+c(−1,0,0) = (1,1,1)$$
+>
+> $$\begin{bmatrix} 
+1 & 2 & -1 & | & 1 \\ 
+0 & 1 & 0 & | & 1 \\
+1 & 0 & 0 & | & 1 \\ 
+\end{bmatrix} \Rightarrow a = 1, b = 1, c= 2$$
+>
+> Entonces nos queda que:
+>
+> $$f(1,1,1) = 1f(1,0,1)+ 1f(2,1,0)+2f(−1,0,0)$$
+>
+> $$f(1,1,1) = (1,2,1)+ (2,1,0)+2(1,2,1) = (4,5,3) \neq (1, 1, 0) = g(1, 1, 1)$$
+>
+> Con esto podemos concluir que $f \neq g$
