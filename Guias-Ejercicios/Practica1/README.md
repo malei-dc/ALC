@@ -301,7 +301,7 @@ plt.show ()
 >
 > - De la tercera ecuación obtenemos que $c = -3$
 > - De la segunda tenemos que $-2b + 9 = -2 \Rightarrow b = \frac{11}{2}$
-> - De la primera ecuación tenemos que $a + \frac{11}{2} - 3 = 1 \Rightarrow a = -\frac{5}{2}$
+> - De la primera ecuación tenemos que $a + \frac{11}{2} - 3 = 1 \Rightarrow a = -\frac{3}{2}$
 
 > En el archivo [practica1.ipynb](/Guias-Ejercicios/Practica1/practica1.ipynb) está verificado el resultado, me da lo mismo :)
 

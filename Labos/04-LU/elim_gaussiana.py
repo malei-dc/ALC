@@ -23,8 +23,6 @@ def elim_gaussiana(A):
             U[i,:] = U[i,:] - L[i,j]*U[j,:]
             cant_op += (n-i-1)*2+1 #ponele xd lo que deberia tener de cant ops
 
-        
-
     ## hasta aqui
     
     return L, U, cant_op
@@ -37,16 +35,9 @@ def matriz_B(n):
 def gauss(n):
     return ((n*(n+1))/2)
 
-import matplotlib.pyplot as plt
-
-x = np.arange(1,100,1)
-y = gauss(x)
-
-plt.plot(x, y, '-r')
-plt.show()
 
 #Ejercicio 3
-def resolucion_sistema(L, U, b):
+"""def resolucion_sistema(L, U, b):
     m=L.shape[0]
     n=L.shape[1]
 
@@ -62,7 +53,23 @@ def resolucion_sistema(L, U, b):
         for j in range(i-1, -1, -1):
             x[i] += (y[j] - U[i, j] * x[j]) / U[i, i]
     
+    return x"""
+
+def resolucion_sistema(L, U, b):
+    m = L.shape[0]
+
+    # Sustitución hacia adelante: Ly = b
+    y = np.zeros_like(b, dtype=float)
+    for i in range(m):
+        y[i] = b[i] - np.dot(L[i, :i], y[:i])
+
+    # Sustitución hacia atrás: Ux = y
+    x = np.zeros_like(b, dtype=float)
+    for i in range(m-1, -1, -1):
+        x[i] = (y[i] - np.dot(U[i, i+1:], x[i+1:])) / U[i, i]
+
     return x
+
 
 def solucion_final(A, b):
     L, U, _ = elim_gaussiana(A)
@@ -70,7 +77,7 @@ def solucion_final(A, b):
     return x_res
 
 def main():
-    """n = 7
+    n = 7
     B = np.eye(n) - np.tril(np.ones((n,n)),-1) 
     B[:n,n-1] = 1
     print('Matriz B \n', B)
@@ -82,18 +89,23 @@ def main():
     print('Cantidad de operaciones: ', cant_oper)
     print('B=LU? ' , 'Si!' if np.allclose(np.linalg.norm(B - L@U, 1), 0) else 'No!')
 
-    print('B=LU? hola ' , 'Si!' if np.allclose(B, L@U) else 'No!')
     print('Norma infinito de U: ', np.max(np.sum(np.abs(U), axis=1)) )
+
+    print("---------- Ejercicio 2 ----------")
+
     import matplotlib.pyplot as plt
     x = np.arange(1,100,1)
     y = gauss(x)
-    print(y)
     plt.plot(x, y, '-r')
-    plt.show()"""
+    #plt.show()
 
-    M = np.array([[2, 0, 1], [1, 2, 3], [0, 0, 1]])
-    b = np.array([7, 10, 1])
-    print(solucion_final(M, b))
+    print("---------- Ejercicio 3 ----------")
+
+    M = np.array([[1, 1, 1], [4, 2, 1], [9, 3, 1]])
+    b = np.array([1, 2, 0])
+    print("M = ", M)
+    print("b = ", b)
+    print("Mx = b -> x = ",solucion_final(M, b))
 
 if __name__ == "__main__":
     main()
