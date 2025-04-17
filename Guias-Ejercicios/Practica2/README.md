@@ -202,4 +202,49 @@ sen(t) & cos(t)
 >
 > Con esto podemos concluir que $f \neq g$
 
-### 4) 
+### 4) Buscar a
+
+Hallar todos los $a \in \mathbb{R}$ para los cuales exista una transformación lineal $f : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ que satisfaga que $f(1,−1, 1) = (2, a,−1), f(1,−1, 2) = (a^2,−1, 1), f(1,−1,−2) = (5,−1,−7).$
+
+> Veamos si los vectores de entrada son linealmente dependientes:
+>
+> $$ \begin{bmatrix}
+1 & -1 & 1 \\
+1 & -1 & 2 \\
+1 & -1 & -2
+\end{bmatrix} \Rightarrow f_2+f_1, f_3+f_1
+\begin{bmatrix}
+1 & -1 & 1 \\
+0 & 0 & 3 \\
+0 & 0 & -1
+\end{bmatrix}$$
+>
+> Claramente son L.D. Intentemos escribir unos terminos de otros: 
+>
+> $$(1,−1,2) = (1,-1,1) + (0,0,1)$$
+>
+> $$(1,−1,−2) = (1,-1,1) + (-3) (0,0,1)$$
+>
+> Usando la linealidad podemos aplicar la funcion:
+>
+> $$f(1,−1,2) = f((1,-1,1) + (0,0,1)) = f(1,-1,1) + f(0,0,1) \Rightarrow (a^2,−1,1) = (2,a,−1) + f(0,0,1)$$
+>
+> Despejando nos queda que:
+>
+> $$f(0,0,1) = (a^2,−1,1) -  (2,a,−1) = (a^2-2, -1-a, 2)$$
+>
+> Haciendo lo mismo con el otro:
+>
+> $$f(1,−1,−2) = f((1,-1,1) + (-3) (0,0,1)) = f(1,-1,1) + (-3) f(0,0,1)$$
+>
+> Reemplazando tenemos que:
+>
+> $$(5,−1,−7) = (2,a,−1) + (-3)  (a^2-2, -1-a, 2) = (-3a^2+8, 4a+3,-7)$$
+>
+> De este último paso podemos despejar: 
+>
+> $$5 = -3a^2+8 \Rightarrow a^2 = 1 \Rightarrow a= \pm 1$$
+>
+> $$-1 =  4a+3 \Rightarrow a = -1$$
+>
+> Entonces concluimos que $a = -1$ es la única opción.
