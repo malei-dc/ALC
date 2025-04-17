@@ -243,8 +243,8 @@ Hallar todos los $a \in \mathbb{R}$ para los cuales exista una transformación l
 >
 > De este último paso podemos despejar: 
 >
-> $$5 = -3a^2+8 \Rightarrow a^2 = 1 \Rightarrow a= \pm 1$$
->
-> $$-1 =  4a+3 \Rightarrow a = -1$$
+> $$\begin{cases} 5 = -3a^2+8 \Rightarrow a^2 = 1 \Rightarrow a= \pm 1\\
+-1 =  4a+3 \Rightarrow a = -1
+\end{cases}$$
 >
 > Entonces concluimos que $a = -1$ es la única opción.
