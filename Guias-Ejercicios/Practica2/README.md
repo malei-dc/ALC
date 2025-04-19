@@ -299,7 +299,7 @@ Calcular bases del núcleo y de la imagen para cada tranformación lineal de los
 >
 > $$f(f(x,y)) = f(x,-y) = (x,y) \Rightarrow f o f = id \Rightarrow f = f^{-1}$$
 
-- $f(x, y) = ( \frac{1}{2} (x + y), \frac{1}{2} (x + y))$
+3. $f(x, y) = ( \frac{1}{2} (x + y), \frac{1}{2} (x + y))$
 
 > $Nu(f):$ buscamos los vectores  $(x,y)$ tales que:
 >
@@ -315,7 +315,7 @@ Calcular bases del núcleo y de la imagen para cada tranformación lineal de los
 > - Epimorfismo $\Leftrightarrow Im(f) = \mathbb{R}^2 \rightarrow$ No cumple, la imagen es solo una recta.
 > - Isomorfismo $\Leftrightarrow$ mono + epi $\rightarrow$ No es epi ni mono. 
 
-- $f(x, y) = (x\ast cos(t) − y\ast sen(t) , x\ast sen (t) + y\ast cos (t))$
+4. $f(x, y) = (x\ast cos(t) − y\ast sen(t) , x\ast sen (t) + y\ast cos (t))$
 
 > La matriz asociada es:
 >
@@ -330,9 +330,106 @@ sen(t) & cos(t)
 >
 > La matriz inversa es:
 >
-> > $$A^{-1} = \begin{bmatrix}
+> $$A^{-1} = \begin{bmatrix}
 cos(t) & sen(t) \\
 -sen(t) & cos(t)
 \end{bmatrix}$$
 >
 >  Interpretación: Es una rotación en sentido horario (ángulo $−t$).
+
+5. Tenemos $f: \mathbb{R}^2 \rightarrow \mathbb{R}^2$
+
+$$\begin{cases} 
+f(1,1) = (-5, 3) \\
+f(-1,1) = (5, 2)
+\end{cases}$$
+
+> $Im(f):$ es lo que esta a la derecha del $=$
+>
+> $$Im(f) = [(-5,3), (5,2)]$$
+>
+> Si triangulo los dos vectores quedan $(-5,3),(0,5)$, es decir que son L.I. por lo tanto una base de la imagen es $Im(f) = \langle (-5,3),(0,5) \rangle$ 
+>
+> $Nu(f)$: busco $(x,y)/ f(x,y) = (0,0)$
+>
+> $$(x,y) = a(1,1) + b(-1,1) = (0,0)$$
+>
+> $$f(x,y) = f(a(1,1)) + f(b(-1,1)) = a\ast f(1,1) + b \ast f(-1,1) = a \ast (-5,3) + b \ast (5,2) = (-5a+5b, 3a+2b)=(0,0)$$
+>
+> $$\begin{bmatrix}
+-1 & 1 & | & 0\\
+3 & 2 & | & 0
+\end{bmatrix} \Rightarrow f_2+3f_1 
+\begin{bmatrix}
+-1 & 1 & | & 0\\
+0 & 5 & | & 0
+\end{bmatrix} \Rightarrow b=0, a=0$$
+>
+> Entonces nos queda que el nucleo es la solución trivial $Nu(f) = (0,0)$
+>
+> - Epimorfismo: si, la imagen genera $\mathbb{R}^2$
+> - Monomorfismo: si, el núcleo es $(0,0)$
+> - Isomorfismo: si
+>
+> $f^{-1}$: los vectores (1,1) y (−1,1) son tu base inicial, y su imagen es la base transformada. Pero necesitamos la matriz de $f$ en la base canónica. Para eso necesitamos escribir a los vectores (1,0) y (0,1) como combinaciones lineales de (1,1) y (-1,1)
+>
+> - $(1,0) = a(1,1)+b(-1,1) \Rightarrow (a-b,a+b) = (1,0)$
+>
+> $$\begin{cases}
+a-b = 1 \Rightarrow -b-b = 1 \Rightarrow b = -\frac{1}{2}\\
+a+b = 0 \Rightarrow a = -b \Rightarrow a = \frac{1}{2}
+\end{cases}$$
+>
+> Entonces aplicando la linealidad:
+>
+> $$f(1,0) = \frac{1}{2}f(1,1)  -\frac{1}{2}f(-1,1) = \frac{1}{2}(−5, 3)  -\frac{1}{2}(5, 2) = (-5, \frac{1}{2})$$ 
+>
+> - $(0,1) = a(1,1)+b(-1,1) \Rightarrow (a-b,a+b) = (0,1)$
+>
+> $$\begin{cases}
+a-b = 0 \Rightarrow a = b\\
+a+b = 1 \Rightarrow b = \frac{1}{2} = a
+\end{cases}$$
+>
+> Entonces aplicando la linealidad:
+>
+> $$f(0,1) = \frac{1}{2}f(1,1)  +\frac{1}{2}f(-1,1) = \frac{1}{2}(−5, 3)  +\frac{1}{2}(5, 2) = (0, \frac{5}{2})$$
+>
+> La matriz en base canónica es:
+>
+> $$A= \begin{bmatrix}
+-5 & 0 \\ 
+\frac{1}{2} & \frac{5}{2}
+\end{bmatrix}$$
+>
+> Entonces la inversa es:
+>
+> $$A^{-1}= \frac{1}{det(A)}\begin{bmatrix}
+ \frac{5}{2} & 0 \\ 
+-\frac{1}{2} & -5
+\end{bmatrix}$$
+>
+> $$Det(A) = (-5)(\frac{5}{2}) - 0(-\frac{1}{2}) = -\frac{25}{2}$$
+>
+> $$A^{-1}= \frac{1}{-\frac{25}{2}}\begin{bmatrix}
+ \frac{5}{2} & 0 \\ 
+-\frac{1}{2} & -5
+\end{bmatrix} = 
+-\frac{2}{25}\begin{bmatrix}
+ \frac{5}{2} & 0 \\ 
+-\frac{1}{2} & -5
+\end{bmatrix} = 
+\begin{bmatrix}
+ -\frac{1}{5} & 0 \\ 
+\frac{1}{25} & \frac{2}{5}
+\end{bmatrix}$$
+
+6. Mas de lo mismo
+7. Tambien. Paso, next.
+
+### 6) Más imagen, nucleo, mono, epi, iso
+
+Sean $f : \mathbb{R}^3 \rightarrow \mathbb{R}^4, f(x_1, x_2, x_3) = (x_1 + x_2, x_1 + x_3, 0, 0)$ y $g: \mathbb{R}^4 \rightarrow \mathbb{R}^2,
+g(x_1, x_2, x_3, x_4) = (x_1 − x_2, 2x_1 − x_2)$. Calcular el núcleo y la imagen de $f$, de $g$ y de $g ◦ f$. Decidir si son monomorfismos, epimorfismos o isomorfismos.
+
+## Aritmética de punto flotante
