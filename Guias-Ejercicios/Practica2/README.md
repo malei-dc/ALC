@@ -432,4 +432,27 @@ a+b = 1 \Rightarrow b = \frac{1}{2} = a
 Sean $f : \mathbb{R}^3 \rightarrow \mathbb{R}^4, f(x_1, x_2, x_3) = (x_1 + x_2, x_1 + x_3, 0, 0)$ y $g: \mathbb{R}^4 \rightarrow \mathbb{R}^2,
 g(x_1, x_2, x_3, x_4) = (x_1 − x_2, 2x_1 − x_2)$. Calcular el núcleo y la imagen de $f$, de $g$ y de $g ◦ f$. Decidir si son monomorfismos, epimorfismos o isomorfismos.
 
+> - $f$
+>   - $Nu(f)$: queremos buscar $(x,y,z)/ f(x,y,z)=(0,0,0,0)$, me queda que $x+y=0, x+z=0 \Rightarrow x = -y, z = y \Rightarrow Nu(f) = [y(-1,1,1) \in \mathbb{R}^3]$. La base del núcleo es $Nu(f) = \langle (-1,1,1) \rangle$ como no es la solución trivial, **NO** es mono.
+>   - $Im(f)$: descomponemos $(x_1 + x_2, x_1 + x_3, 0, 0) = x_1(1,1,0,0) + x_2(1,0,0,0) + x_3(0,1,0,0)$. A ojo sé que es L.D ya que tenemos dos vectores canónicos, así que podemos sacar el vector $(1,1,0,0)$ para formar una base que queda: $Im(f) = \langle(1,0,0,0),(0,1,0,0)\rangle$ está claro que con 2 vectores no generamos todo $\mathbb{R}^4$, por lo tanto **NO** es epi.
+
+> - $g$
+>   - $Nu(g)$: queremos buscar $(x,y,z,w) = (0,0)$, me queda que $x-y =0, 2x-y=0 \Rightarrow x = 0, y=0 \Rightarrow Nu(g) = [z(0,0,1,0)+w(0,0,0,1) \in \mathbb{R}^4]$. La base del núcleo es $Nu(g) = \langle(0,0,1,0),(0,0,0,1)\rangle$ como no es el núcleo trivial **NO** es mono.
+>   - $Im(g)$: descomponemos $(x_1 − x_2, 2x_1 − x_2) = x_1(1,2)+x_2(-1,-1)$ son L.I ya que si triangulamos nos queda $(1,2), (0,1)$ lo cual forman la base de la imagen $Im(g) = \langle(1,2), (0,1)\rangle$ que generan todo $\mathbb{R}^2$. **SI** es epi.
+
+> - $gof$ notar que $\mathbb{R}^3 \rightarrow \mathbb{R}^2 $
+>   - $Nu(gof)$: desarrollamos
+>
+>       $$f(x,y,z) = (x + y, x + z, 0, 0) $$
+>
+>       $$g(f(x,y,z)) = g(x + y, x + z, 0, 0) =  ((x + y) − (x + z), 2(x + y) − (x + z)) = (y-z, x+2y-z)$$
+>
+>       $$gof(x,y,z) = (y-z, x+2y-z)$$
+>
+>      Queremos que $gof(x,y,z) = (0,0)$ de la primera ecuación nos queda $y = z$ y de la segunda que $x = -z$. Nuevamente la base del núcleo es $Nu(gof)= \langle (-1,1,1)\rangle \Rightarrow $ **NO** es mono
+>
+>   - $Im(gof)$: la salida de $g$ ya vimos que generaba todo $\mathbb{R}^2$ y $f$ no anula los dos primeros valores de entrada para $g$, asi que **SI** es epi
+>
+
+ 
 ## Aritmética de punto flotante
