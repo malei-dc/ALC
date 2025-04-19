@@ -449,7 +449,8 @@ g(x_1, x_2, x_3, x_4) = (x_1 − x_2, 2x_1 − x_2)$. Calcular el núcleo y la i
 >
 >       $$gof(x,y,z) = (y-z, x+2y-z)$$
 >
->      Queremos que $gof(x,y,z) = (0,0)$ de la primera ecuación nos queda $y = z$ y de la segunda que $x = -z$. Nuevamente la base del núcleo es $Nu(gof)= \langle (-1,1,1)\rangle \Rightarrow $ **NO** es mono
+>      Queremos que $gof(x,y,z) = (0,0)$ de la primera ecuación nos queda $y = z$ y de la segunda que $x = -z$. Nuevamente la base del núcleo es 
+$Nu(gof)= \langle (-1,1,1)\rangle \Rightarrow$ **NO** es mono
 >
 >   - $Im(gof)$: la salida de $g$ ya vimos que generaba todo $\mathbb{R}^2$ y $f$ no anula los dos primeros valores de entrada para $g$, asi que **SI** es epi
 >
