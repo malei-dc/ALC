@@ -248,3 +248,91 @@ Hallar todos los $a \in \mathbb{R}$ para los cuales exista una transformación l
 \end{cases}$$
 >
 > Entonces concluimos que $a = -1$ es la única opción.
+
+### 5) Núcleo e imagen de T.L
+
+Calcular bases del núcleo y de la imagen para cada tranformación lineal de los ejercicios 2 y 3. Decidir, en cada caso, si $f$ es epimorfismo,monomorfismo o isomorfismo. En el caso que sea isomorfismo, calcular $f^{−1}$.
+
+1. $f(x, y) = (x, 0)$
+
+> $Nu(f):$ buscamos los vectores  $(x,y)$ tales que:
+>
+> $$f(x, y) = (x, 0) = (0,0) \Rightarrow x = 0 \Rightarrow Nu(f) = [(0,y) \in \mathbb{R}^2]$$
+>
+> Base del núcleo:
+>
+> $$Nu(f)=[(0,1)]$$
+>
+> $Im(f):$ todos los vectores que se pueden escribir como $f(x,y) = (x,0)$ es decir:
+>
+> $$Im(f) = [(x,0) \in \mathbb{R}^2] $$
+>
+> Base de la imagen:
+>
+> $$Im(f)=[(1,0)]$$
+>
+> - Monomorfismo $\Leftrightarrow Nu(f) = [0] \rightarrow$ No cumple, ya que tiene núcleo no trivial.
+> - Epimorfismo $\Leftrightarrow Im(f) = \mathbb{R}^2 \rightarrow$ No cumple, la imagen es solo una recta.
+> - Isomorfismo $\Leftrightarrow$ mono + epi $\rightarrow$ No es epi ni mono. 
+
+2. $f(x,y)=(x,−y)$
+
+> $Nu(f):$ buscamos los vectores  $(x,y)$ tales que:
+>
+> $$f(x, y) = (x, -y) = (0,0) \Rightarrow x = 0, -y=0 \Rightarrow Nu(f) = [(0,0)]$$
+>
+> Base del núcleo: $\emptyset$
+>
+> $Im(f):$ todos los vectores que se pueden escribir como $f(x,y) = (x,-y)$ es decir:
+>
+> $$Im(f) = \mathbb{R}^2 \Rightarrow \text{Base: } [(1,0),(0,-1)] $$
+>
+> - Monomorfismo $\Leftrightarrow Nu(f) = [0] \rightarrow$ Si cumple.
+> - Epimorfismo $\Leftrightarrow Im(f) = \mathbb{R}^2 \rightarrow$ Si
+> - Isomorfismo $\Leftrightarrow$ mono + epi $\rightarrow$ Si 
+>
+> $f^{-1}$: para una t.l. $f: \mathbb{R}^n \rightarrow \mathbb{R}^n$, la función inversa $f^{-1}$ es la que deshace lo que hace $f$
+>
+> $$f^{−1}(f(v))=v \text{ y } f(f^{−1}(v))=v$$
+>
+> En nuestro caso de $f(x,y)=(x,−y)$ si aplicamos $f$ dos veces:
+>
+> $$f(f(x,y)) = f(x,-y) = (x,y) \Rightarrow f o f = id \Rightarrow f = f^{-1}$$
+
+- $f(x, y) = ( \frac{1}{2} (x + y), \frac{1}{2} (x + y))$
+
+> $Nu(f):$ buscamos los vectores  $(x,y)$ tales que:
+>
+> $$f(x, y) = ( \frac{1}{2} (x + y), \frac{1}{2} (x + y)) \Rightarrow x + y = 0 \Rightarrow y = -x \Rightarrow x(1,-1)$$
+>
+> Base del núcleo: $Nu(f) = [(1,-1)]$
+>
+> $Im(f):$ todos los vectores que se pueden escribir como $f(x, y) = ( \frac{1}{2} (x + y), \frac{1}{2} (x + y))$ si tomo $s = \frac{1}{2} (x + y)$ obtengo que $f(x,y) = (s, s) = s(1,1)$ es decir:
+>
+> $$Im(f) = [(1,1)] $$
+>
+> - Monomorfismo $\Leftrightarrow Nu(f) = [0] \rightarrow$ No cumple, ya que tiene núcleo no trivial.
+> - Epimorfismo $\Leftrightarrow Im(f) = \mathbb{R}^2 \rightarrow$ No cumple, la imagen es solo una recta.
+> - Isomorfismo $\Leftrightarrow$ mono + epi $\rightarrow$ No es epi ni mono. 
+
+- $f(x, y) = (x\ast cos(t) − y\ast sen(t) , x\ast sen (t) + y\ast cos (t))$
+
+> La matriz asociada es:
+>
+> $$A = \begin{bmatrix}
+cos(t) & - sen(t) \\
+sen(t) & cos(t)
+\end{bmatrix}$$
+>
+> - Es mono pues el núcleo es $(0,0)$
+> - Es epi ya que la transformacion lineal es una rotación en el plano con angulo $t$, la imagen puede tener la base canónica y genera todo $\mathbb{R}^2$
+> - Como es mono y epi, entonces es iso
+>
+> La matriz inversa es:
+>
+> > $$A^{-1} = \begin{bmatrix}
+cos(t) & sen(t) \\
+-sen(t) & cos(t)
+\end{bmatrix}$$
+>
+>  Interpretación: Es una rotación en sentido horario (ángulo $−t$).
