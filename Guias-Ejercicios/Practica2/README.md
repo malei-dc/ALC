@@ -457,3 +457,98 @@ $Nu(gof)= \langle (-1,1,1)\rangle \Rightarrow$ **NO** es mono
 
  
 ## Aritmética de punto flotante
+
+### 7) Experimento en [practica2.ipynb](/Guias-Ejercicios/Practica2/practica2.ipynb)
+
+Realizar las siguientes operaciones en Python. En todos los casos, pensar: ¿cuál es el resultado esperado? ¿coincide con el obtenido? ¿a qué se debe el problema (si lo hay)? (Notamos $\epsilon$ al épsilon de la máquina. Puede obtenerse importando la librería ```numpy``` como ```np``` y ejecutando el comando ```np. finfo (np.float32) .eps```).
+
+1. Tomando $p =1e34, q = 1$, calcular $p + q − p$.
+2. Tomando $p = 100, q =1e−15$, calcular $(p + q) + q$ y $((p + q) + q) + q$. Comparar con $p + 2q$ y con $p + 3q$ respectivamente.
+3. $0.1+0.2 == 0.3$
+4. $0.1+0.3 == 0.4$
+5. $1e−323$
+6. $1e−324$
+7. $\frac{\epsilon}{2}$
+8. $(1+\frac{\epsilon}{2})+ \frac{\epsilon}{2}$
+9. $1+ (\frac{\epsilon}{2}+\frac{\epsilon}{2})$
+10. $((1+\frac{\epsilon}{2})+\frac{\epsilon}{2})-1$
+11. $(1+(\frac{\epsilon}{2}+\frac{\epsilon}{2}))-1$
+12. $sen(10^j \pi)$ para $1\leq j \leq 25$
+13. $sen(\frac{\pi}{2}+10^j \pi)$ para $1\leq j \leq 25$
+
+### 8) Convergencia de sumatorias
+
+Mostrar que una serie divergente de términos que tienden a 0 (e.g $\sum \frac{1}{n}$) podría resultar convergente en aritmética de punto flotante. ¿Qué debería ocurrir para que
+el resultado numérico sea Inf? ¿Cuál es la mejor estrategia para realizar numéricamente una sumatoria de términos positivos?
+
+> Cuando tenemos una serie armónica que matemáticamente diverge, es decir crece hasta el $\infty$ aunque sus términos tienden a $0$.
+>
+> El problema es que en punto flotante (```float64```) los valores dejan de contrubuir una vez que:
+>
+> $$\frac{1}{n}<\epsilon \ast S$$
+>
+> Donde $S$ es el valor acumulado de la suma. Entonces llega un punto en el que ```S + 1/n == S``` y deja de cambiar el valor acumulado como se ve en el ejercicio enterior con los experimentos. Así la serie parece "converger", pero solo los terminos se vuelven muy chicos para afectar la suma
+>
+```python
+import numpy as np
+
+S = 0.0
+n = 1
+while True:
+    term = 1/n
+    if S + term == S:
+        break
+    S += term
+    n += 1
+
+print(f"Resultado de la suma: {S}")
+print(f"Número de términos usados: {n}")
+```
+## Normas vectoriales y sucesiones
+
+### 11) Constantes de equivalencia entre las normas
+
+Si $x \in \mathbb{R}^n$, probar que las constantes de equivalencia entre las normas $∥ · ∥_1$ y $∥ · ∥_2$ y entre las normas $∥ · ∥_2$ y $∥ · ∥_{\infty}$ vienen dadas por:
+
+$$||x||_{\infty} \leq ||x||_2 \leq \sqrt{n}||x||_{\infty}$$
+
+> - Primero veamos que $||x||_{\infty} \leq ||x||_2$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
+>
+>   $$||x||_2^2 = (\sum_{i=1}^n |x_i|^2) \geq |x_{max}|^2 = ||x||_\infty^2 $$
+>
+>   pues al ser todos los términos de la suma no negativos, el máximo de los términos debe ser menor o igual que la suma completa.
+>
+> - Para la parte de $||x||_2 \leq \sqrt{n}||x||_{\infty}$ vamos a ver un $M = ||x||_\infty = max_i|x_i|$ entonces:
+>
+>   $$\sum_{i=1}^n |x_i|^2 \leq \sum_{i=1}^n M^2 = nM^2 \Rightarrow ||x||_2 = (\sum_{i=1}^n |x_i|^2)^\frac{1}{2} \leq (nM^2)^\frac{1}{2} = \sqrt{n}M = \sqrt{n}||x||_\infty$$
+>
+> $$\square$$
+
+$$\frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2 \leq ||x||_1$$
+
+> - Primero veamos que $||x||_2 \leq ||x||_1$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
+>
+>   $$||x||_2^2 = (\sum_{i=1}^n |x_i|^2) \leq (\sum_{i=1}^n |x_i|)^2 = ||x||_1^2 $$
+>
+>   Esta desigualdad se cumple por la desigualdad cuadrática $(a+b)^2 = a^2 +2ab + b^2 \geq a^2 + b^2$ siendo $a,b$ numeros positivos como es en nuestro caso.
+>
+> - Ahora veamos que $\frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2$
+>
+>   Para esta parte usamos la desigualdad de Cauchy-Schwarz: $\langle x,y \rangle \leq ||x||_2 \ast ||y||_2$
+>
+>   Tomamos:
+>
+>   - $x = (x_1, ...,x_n) \in \mathbb{R}^n$
+>   - $y = (sgn(x_1), ...,sgn(x_n))$ donde sgn es -1 si $x_i$ es negativo o 1 si es positivo y 0 si es 0
+>
+>   Con esos sabemos que $\langle x,y \rangle = ||x||_1$ y que $||y||_2 = \sqrt{cantNoCeros} \leq \sqrt{n}$. Reemplazando nos queda que:
+>
+>   $$\langle x,y \rangle =||x||_1 \leq ||x||_2 \ast ||y||_2 \leq ||x||_2 \ast \sqrt{n}$$
+>
+>   $$\Rightarrow \frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2$$
+>
+>   $\square$
+
+### 12) Sucesiones
+
+Para cada una de las siguientes sucesiones $[x_n]_{n\in N}$, determinar si existe $lim_{n\rightarrow \infty} x_n$ y en caso afirmativo hallarlo.
