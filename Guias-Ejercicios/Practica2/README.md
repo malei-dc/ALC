@@ -518,7 +518,7 @@ $$\|x\|_{\infty} \leq \|x\|{\scriptsize 2} \leq \sqrt{n}\|x\|{\scriptsize \infty
 >
 >   pues al ser todos los términos de la suma no negativos, el máximo de los términos debe ser menor o igual que la suma completa.
 >
-> - Para la parte de $\|x\|{\scriptsize 2} \leq \sqrt{n}\|x\|_{\infty}$ vamos a ver un $M = \|x\|_\infty = max{\scriptsize i}|x{\scriptsize i}|$ entonces:
+> - Para la parte de $\|x\|{\scriptsize 2} \leq \sqrt{n}\|x\|_{\infty}$ vamos a ver un $M = \|x\|{\scriptsize \infty} = max{\scriptsize i}|x{\scriptsize i}|$ entonces:
 >
 >   $$\sum_{i=1}^n |x{\scriptsize i}|^2 \leq \sum_{i=1}^n M^2 = nM^2 \Rightarrow \|x\|{\scriptsize 2} = (\sum_{i=1}^n |x{\scriptsize i}|^2)^\frac{1}{2} \leq (nM^2)^\frac{1}{2} = \sqrt{n}M = \sqrt{n}\|x\|_\infty$$
 >
@@ -528,7 +528,7 @@ $$\frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2 \leq \|x\|_1$$
 
 > - Primero veamos que $\|x\|{\scriptsize 2} \leq \|x\|{\scriptsize 1}$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
 >
->   $$\|x\|_2^2 = (\sum_{i=1}^n |x{\scriptsize i}|^2) \leq (\sum_{i=1}^n |x{\scriptsize i}|)^2 = \|x\|^2{\scriptsize 1} $$
+>   $$\|x\|^2{\scriptsize 2} = (\sum_{i=1}^n |x{\scriptsize i}|^2) \leq (\sum_{i=1}^n |x{\scriptsize i}|)^2 = \|x\|^2{\scriptsize 1} $$
 >
 >   Esta desigualdad se cumple por la desigualdad cuadrática $(a+b)^2 = a^2 +2ab + b^2 \geq a^2 + b^2$ siendo $a,b$ numeros positivos como es en nuestro caso.
 >
