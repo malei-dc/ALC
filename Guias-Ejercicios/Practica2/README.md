@@ -586,8 +586,10 @@ Para cada una de las siguientes sucesiones de vectores $[x{\scriptsize n}]_{n\in
 
 > Para que una sucesión en $\mathbb{R}^2$ exista, ambas coordenadas deben converger, en este caso en la primer coordenada oscila entre 1 y -1, por lo que no existe el límite. Por lo que el vector completo tampoco.
 
-3. $x_n = \begin{cases}(\frac{1}{n}, 0) & \text{si n es par} \\
-(0,\frac{-1}{n}) & \text{si n es impar}\end{cases}$
+3. 
+
+$$x_n = \begin{cases}(\frac{1}{n}, 0) & \text{si n es par} \\
+(0,\frac{-1}{n}) & \text{si n es impar}\end{cases}$$
 
 > Acá necesitamos analizar ambos casos:
 >
