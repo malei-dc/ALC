@@ -510,45 +510,45 @@ print(f"Número de términos usados: {n}")
 
 Si $x \in \mathbb{R}^n$, probar que las constantes de equivalencia entre las normas $∥ · ∥_1$ y $∥ · ∥_2$ y entre las normas $∥ · ∥_2$ y $∥ · ∥_{\infty}$ vienen dadas por:
 
-$$||x||_{\infty} \leq ||x||_2 \leq \sqrt{n}||x||_{\infty}$$
+$$\|x\|_{\infty} \leq \|x\|{\scriptsize 2} \leq \sqrt{n}\|x\|{\scriptsize \infty}$$
 
-> - Primero veamos que $||x||_{\infty} \leq ||x||_2$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
+> - Primero veamos que $\|x\|_{\infty} \leq \|x\|{\scriptsize 2}$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
 >
->   $$||x||_2^2 = (\sum_{i=1}^n |x_i|^2) \geq |x_{max}|^2 = ||x||_\infty^2 $$
+>   $$\|x\|^2{\scriptsize 2} = (\sum_{i=1}^n |x{\scriptsize i}|^2) \geq |x{\scriptsize max}|^2 = \|x\|_\infty^2 $$
 >
 >   pues al ser todos los términos de la suma no negativos, el máximo de los términos debe ser menor o igual que la suma completa.
 >
-> - Para la parte de $||x||_2 \leq \sqrt{n}||x||_{\infty}$ vamos a ver un $M = ||x||_\infty = max_i|x_i|$ entonces:
+> - Para la parte de $\|x\|{\scriptsize 2} \leq \sqrt{n}\|x\|_{\infty}$ vamos a ver un $M = \|x\|_\infty = max{\scriptsize i}|x{\scriptsize i}|$ entonces:
 >
->   $$\sum_{i=1}^n |x_i|^2 \leq \sum_{i=1}^n M^2 = nM^2 \Rightarrow ||x||_2 = (\sum_{i=1}^n |x_i|^2)^\frac{1}{2} \leq (nM^2)^\frac{1}{2} = \sqrt{n}M = \sqrt{n}||x||_\infty$$
+>   $$\sum_{i=1}^n |x{\scriptsize i}|^2 \leq \sum_{i=1}^n M^2 = nM^2 \Rightarrow \|x\|{\scriptsize 2} = (\sum_{i=1}^n |x{\scriptsize i}|^2)^\frac{1}{2} \leq (nM^2)^\frac{1}{2} = \sqrt{n}M = \sqrt{n}\|x\|_\infty$$
 >
 > $$\square$$
 
-$$\frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2 \leq ||x||_1$$
+$$\frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2 \leq \|x\|_1$$
 
-> - Primero veamos que $||x||_2 \leq ||x||_1$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
+> - Primero veamos que $\|x\|{\scriptsize 2} \leq \|x\|{\scriptsize 1}$ para todo $x \in \mathbb{R}^n$. Si tomo ambas normas al cuadrado se deduce que: 
 >
->   $$||x||_2^2 = (\sum_{i=1}^n |x_i|^2) \leq (\sum_{i=1}^n |x_i|)^2 = ||x||_1^2 $$
+>   $$\|x\|_2^2 = (\sum_{i=1}^n |x{\scriptsize i}|^2) \leq (\sum_{i=1}^n |x{\scriptsize i}|)^2 = \|x\|^2{\scriptsize 1} $$
 >
 >   Esta desigualdad se cumple por la desigualdad cuadrática $(a+b)^2 = a^2 +2ab + b^2 \geq a^2 + b^2$ siendo $a,b$ numeros positivos como es en nuestro caso.
 >
-> - Ahora veamos que $\frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2$
+> - Ahora veamos que $\frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2$
 >
->   Para esta parte usamos la desigualdad de Cauchy-Schwarz: $\langle x,y \rangle \leq ||x||_2 \ast ||y||_2$
+>   Para esta parte usamos la desigualdad de Cauchy-Schwarz: $\langle x,y \rangle \leq \|x\|_2 \ast \|y\|_2$
 >
 >   Tomamos:
 >
 >   - $x = (x_1, ...,x_n) \in \mathbb{R}^n$
 >   - $y = (sgn(x_1), ...,sgn(x_n))$ donde sgn es -1 si $x_i$ es negativo o 1 si es positivo y 0 si es 0
 >
->   Con esos sabemos que $\langle x,y \rangle = ||x||_1$ y que $||y||_2 = \sqrt{cantNoCeros} \leq \sqrt{n}$. Reemplazando nos queda que:
+>   Con esos sabemos que $\langle x,y \rangle = \|x\|_1$ y que $\|y\|_2 = \sqrt{cantNoCeros} \leq \sqrt{n}$. Reemplazando nos queda que:
 >
->   $$\langle x,y \rangle =||x||_1 \leq ||x||_2 \ast ||y||_2 \leq ||x||_2 \ast \sqrt{n}$$
+>   $$\langle x,y \rangle =\|x\|_1 \leq \|x\|_2 \ast \|y\|_2 \leq \|x\|_2 \ast \sqrt{n}$$
 >
->   $$\Rightarrow \frac{1}{\sqrt{n}}||x||_1 \leq ||x||_2$$
+>   $$\Rightarrow \frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2$$
 >
 >   $\square$
 
 ### 12) Sucesiones
 
-Para cada una de las siguientes sucesiones $[x_n]_{n\in N}$, determinar si existe $lim_{n\rightarrow \infty} x_n$ y en caso afirmativo hallarlo.
+Para cada una de las siguientes sucesiones $[x_n]{\scriptsize n\in N}$, determinar si existe $lim_{n\rightarrow \infty} x{\scriptsize n}$ y en caso afirmativo hallarlo.
