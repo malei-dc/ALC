@@ -552,3 +552,60 @@ $$\frac{1}{\sqrt{n}}\|x\|_1 \leq \|x\|_2 \leq \|x\|_1$$
 ### 12) Sucesiones
 
 Para cada una de las siguientes sucesiones $[x_n]{\scriptsize n\in N}$, determinar si existe $lim_{n\rightarrow \infty} x{\scriptsize n}$ y en caso afirmativo hallarlo.
+
+1. $x_n = \frac{1}{n}$
+
+> $lim_{n\rightarrow \infty} \frac{1}{n} = 0$
+
+2. $x_n = \frac{n^2+1}{n^2-1}$
+
+> Cuando $n\rightarrow \infty$ los $\pm 1$ se vuelven despreciable, por lo que los términos dominates de esta sucesión son los $n^2$ en el numerador y denominador que se cancelan, por lo que el $lim_{n\rightarrow \infty} \frac{n^2+1}{n^2-1} = 1$
+
+3. $x_n = (-1)^n$
+
+> Esta sucesión no tiene límite ya que oscila entre $1$ y $-1$ dependiendo si $n$ es par o impar.
+ 
+4. $x_n = (-1)^n e^{-n}$ 
+
+> Esta sucesión tiene dos partes:
+>
+> - $(-1)^n$: oscila entre $1$ y $-1$
+> - $e^{-n}$: tiende a $0$ cuando $n \rightarrow \infty$ ya que es una función exponencial decreciente.
+>
+> Por lo tanto el $lim_{n\rightarrow \infty} (-1)^n e^{-n} = 0$ 
+
+### 13) Sucesiones en $R^2$
+
+Para cada una de las siguientes sucesiones de vectores $[x{\scriptsize n}]_{n\in \mathbb{N}}$ en $\mathbb{R}^2$, determinar si existe $lim{\scriptsize n\rightarrow \infty} x{\scriptsize n}$, y en caso afirmativo hallarlo.
+
+1. $x_n = (1+\frac{1}{n},3)$
+
+> $lim_{n\rightarrow \infty}(1+\frac{1}{n},3) = (1,3)$
+
+2. $x_n = ((-1)^n,e^{-n})$
+
+> Para que una sucesión en $\mathbb{R}^2$ exista, ambas coordenadas deben converger, en este caso en la primer coordenada oscila entre 1 y -1, por lo que no existe el límite. Por lo que el vector completo tampoco.
+
+3. $x_n = \begin{cases}(\frac{1}{n}, 0) & \text{si n es par} \\
+(0,\frac{-1}{n}) & \text{si n es impar}\end{cases}$
+
+> Acá necesitamos analizar ambos casos:
+>
+> - Si $n$ es par: $(\frac{1}{n}, 0) \rightarrow (0,0)$ cuando $n \rightarrow \infty$
+> - Si $n$ es impar: $(0,\frac{-1}{n}) \rightarrow (0,0)$ cuando $n \rightarrow \infty$
+>
+> Por lo tanto se concluye que $x_n \rightarrow (0,0)$ cuando $n \rightarrow \infty$
+
+4. $x_n = (\frac{1}{2^n}, 4, sen(\pi n))$
+
+> - La primera coordenada $\rightarrow 0$ cuando $n \rightarrow \infty$
+> - La segunda es una cte, y la tercera siempre da 0 ya que $sen(k\pi) = 0$
+>
+> Por lo tanto $(\frac{1}{2^n}, 4, sen(\pi n)) \rightarrow (0,4,0)$ cuando $n \rightarrow \infty$
+
+### 14) Sucesiones con normas
+
+Dada una sucesión de vectores $[x{\scriptsize n}]_{n\in \mathbb{N}} \subset \mathbb{R}^k$ y dos normas $∥ · ∥{\scriptsize a}$ y $∥ · ∥{\scriptsize b}$ de
+$\mathbb{R}^k$, usando la equivalencia de normas, probar
+
+$$∥ x{\scriptsize n} ∥{\scriptsize a} \longrightarrow 0 \Longleftrightarrow ∥ x{\scriptsize n} ∥{\scriptsize b}\longrightarrow 0 \text{ cuando } n \rightarrow \infty$$
