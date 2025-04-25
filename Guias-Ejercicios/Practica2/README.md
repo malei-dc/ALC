@@ -611,3 +611,25 @@ Dada una sucesión de vectores $[x{\scriptsize n}]_{n\in \mathbb{N}} \subset \ma
 $\mathbb{R}^k$, usando la equivalencia de normas, probar
 
 $$∥ x{\scriptsize n} ∥{\scriptsize a} \longrightarrow 0 \Longleftrightarrow ∥ x{\scriptsize n} ∥{\scriptsize b}\longrightarrow 0 \text{ cuando } n \rightarrow \infty$$
+
+## Normas matriciales
+
+### 16) Constantes de equivalencia entre normas
+
+Si $A \in \mathbb{R}^{n\times n}$, probar que las constantes de equivalencia entre las normas $\| . \|_1$ y $\| . \|_2$ y entre las normas $\| . \|_2$ y $\| . \|_\infty$ dadas por:
+
+$$\frac{1}{\sqrt{n}}\| A \|_1 \leq \| A \|_2 \leq \sqrt{n} \| A \|_1$$
+
+Calcular los coeficientes para la equivalencia vectorial y matricial entre las normas $\|.\|_1$ y $\|.\|_\infty$
+
+> ---
+>
+> Si una norma matricial está inducida por una norma vectorial $\|.\|$, entonces:
+>
+> $$\|A\| = \underset{x\neq0}{sup} \frac{\|Ax\|}{\|x\|} = \underset{\|x\|=1}{sup} \|Ax\|$$
+>
+> Por eso vamos a usar relaciones conocidas entre las normas vectoriales para deducir relaciones entre normas matriciales.
+>
+>---
+
+$$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
