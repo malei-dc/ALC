@@ -636,17 +636,21 @@ $$\frac{1}{\sqrt{n}}\| A \|{\scriptsize \infty} \leq \| A \|{\scriptsize 2} \leq
 >
 > Sabemos que para cualquier vector $x \in \mathbb{R}^n$:
 >
-> $$\frac{1}{\sqrt{n}}\| x \|{\scriptsize \infty} \leq \| x \|_2 \leq \sqrt{n} \| x \|_\infty$$
+> $$\frac{1}{\sqrt{n}}\| x \|{\scriptsize \infty} \leq \| x \|{\scriptsize 2} \leq \sqrt{n} \| x \|_\infty$$
 >
 > Ahora usamos esto para comparar normas matriciales. Como la norma de $A$ está inducida por la norma del vector, tenemos:
 >
 > - Cota superior: 
 >
-> $$\|A\|_2 =  \underset{\|x\|_2 = 1}{sup} \|Ax\|{\scriptsize 2} \leq \underset{\|x\|_2 = 1}{sup} \sqrt{n} \|Ax\| {\scriptsize \infty} =  \sqrt{n} \underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} $$
+>   $$\|A\|_2 =  \underset{\|x\|_2 = 1}{sup} \|Ax\|{\scriptsize 2} \leq \underset{\|x\|_2 = 1}{sup} \sqrt{n} \|Ax\| {\scriptsize \infty} =  \sqrt{n} \underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} $$
 >
-> Pero $\underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$ por lo tanto:
+>   Pero
 >
-> $$\|A\|_2 \leq \sqrt{n}\|A\|{\scriptsize \infty}$$
+>   $$\underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$$ 
+>
+>   por lo tanto:
+>
+>   $$\|A\|_2 \leq \sqrt{n}\|A\|{\scriptsize \infty}$$
 >
 > - Cota inferior:
 >
