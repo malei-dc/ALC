@@ -618,8 +618,6 @@ $$∥ x{\scriptsize n} ∥{\scriptsize a} \longrightarrow 0 \Longleftrightarrow 
 
 Si $A \in \mathbb{R}^{n\times n}$, probar que las constantes de equivalencia entre las normas $\| . \|_1$ y $\| . \|_2$ y entre las normas $\| . \|_2$ y $\| . \|_\infty$ dadas por:
 
-$$\frac{1}{\sqrt{n}}\| A \|_1 \leq \| A \|_2 \leq \sqrt{n} \| A \|_1$$
-
 Calcular los coeficientes para la equivalencia vectorial y matricial entre las normas $\|.\|_1$ y $\|.\|_\infty$
 
 > ---
@@ -633,3 +631,45 @@ Calcular los coeficientes para la equivalencia vectorial y matricial entre las n
 >---
 
 $$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
+
+> Demo:
+>
+> Sabemos que para cualquier vector $x \in \mathbb{R}^n$:
+>
+> $$\frac{1}{\sqrt{n}}\| x \|_\infty \leq \| x \|_2 \leq \sqrt{n} \| x \|_\infty$$
+>
+> Ahora usamos esto para comparar normas matriciales. Como la norma de $A$ está inducida por la norma del vector, tenemos:
+>
+> - Cota superior: 
+>
+> $$\|A\|_2 =  \underset{\|x\|_2 = 1}{sup} \|Ax\|{\scriptsize 2} \leq \underset{\|x\|_2 = 1}{sup} \sqrt{n} \|Ax\| {\scriptsize \infty} =  \sqrt{n} \underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} $$
+>
+> Pero $\underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$ por lo tanto:
+>
+> $$\|A\|_2 \leq \sqrt{n}\|A\|_\infty$$
+>
+> - Cota inferior:
+>
+> $$\|A\|_\infty = \underset{\|x\|_\infty = 1}{sup}\|Ax\|{\scriptsize \infty} \leq \underset{\|x\|_2 = \sqrt{n}}{sup}\|Ax\|{\scriptsize \infty} = \underset{\|x\|_2 = 1}{sup}\|A\sqrt{n}x\|{\scriptsize \infty} = \sqrt{n}\underset{\|x\|_2 = 1}{sup}\|Ax\|{\scriptsize \infty}$$
+>
+> Y de ahi:
+>
+> $$\|A\|_\infty \leq \sqrt{n} \|A\|_2 \Rightarrow \frac{1}{\sqrt{n}}\|A\|_\infty \leq \|A\|_2$$
+>
+> $$\square$$
+
+$$\frac{1}{\sqrt{n}}\| A \|_1 \leq \| A \|_2 \leq \sqrt{n} \| A \|_1$$
+
+> De forma analoga se calcula esto, te lo debo
+
+### 17) Definición de norma 1 e inf matricial
+
+Probar que para toda $A \in \mathbb{R}^{n \times n}$
+
+$$\|A\|_\infty = \underset{1\leq i \leq n}{max} \sum_{j=1}^n |a_{ij}|$$
+
+Es decir que la norma infinita de una matriz $A$ es max de las normas por fila
+
+> Demo: 
+>
+> 
