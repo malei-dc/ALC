@@ -616,9 +616,9 @@ $$∥ x{\scriptsize n} ∥{\scriptsize a} \longrightarrow 0 \Longleftrightarrow 
 
 ### 16) Constantes de equivalencia entre normas
 
-Si $A \in \mathbb{R}^{n\times n}$, probar que las constantes de equivalencia entre las normas $\| . \|_1$ y $\| . \|_2$ y entre las normas $\| . \|_2$ y $\| . \|_\infty$ dadas por:
+Si $A \in \mathbb{R}^{n\times n}$, probar que las constantes de equivalencia entre las normas $\| . \|{\scriptsize 1}$ y $\| . \|{\scriptsize 2}$ y entre las normas $\| . \|{\scriptsize 2}$ y $\| . \|_\infty$ dadas por:
 
-Calcular los coeficientes para la equivalencia vectorial y matricial entre las normas $\|.\|_1$ y $\|.\|_\infty$
+Calcular los coeficientes para la equivalencia vectorial y matricial entre las normas $\|.\|{\scriptsize 1}$ y $\|.\|_\infty$
 
 > ---
 >
@@ -630,13 +630,13 @@ Calcular los coeficientes para la equivalencia vectorial y matricial entre las n
 >
 >---
 
-$$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
+$$\frac{1}{\sqrt{n}}\| A \|{\scriptsize \infty} \leq \| A \|{\scriptsize 2} \leq \sqrt{n} \| A \|_\infty$$
 
 > Demo:
 >
 > Sabemos que para cualquier vector $x \in \mathbb{R}^n$:
 >
-> $$\frac{1}{\sqrt{n}}\| x \|_\infty \leq \| x \|_2 \leq \sqrt{n} \| x \|_\infty$$
+> $$\frac{1}{\sqrt{n}}\| x \|{\scriptsize \infty} \leq \| x \|_2 \leq \sqrt{n} \| x \|_\infty$$
 >
 > Ahora usamos esto para comparar normas matriciales. Como la norma de $A$ está inducida por la norma del vector, tenemos:
 >
@@ -646,7 +646,7 @@ $$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
 >
 > Pero $\underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$ por lo tanto:
 >
-> $$\|A\|_2 \leq \sqrt{n}\|A\|_\infty$$
+> $$\|A\|_2 \leq \sqrt{n}\|A\|{\scriptsize \infty}$$
 >
 > - Cota inferior:
 >
@@ -654,7 +654,7 @@ $$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
 >
 > Y de ahi:
 >
-> $$\|A\|_\infty \leq \sqrt{n} \|A\|{\scriptsize 2} \Rightarrow \frac{1}{\sqrt{n}}\|A\|_\infty \leq \|A\|{\scriptsize 2}$$
+> $$\|A\|{\scriptsize \infty} \leq \sqrt{n} \|A\|{\scriptsize 2} \Rightarrow \frac{1}{\sqrt{n}}\|A\|_\infty \leq \|A\|{\scriptsize 2}$$
 >
 > $$\square$$
 
