@@ -646,7 +646,7 @@ $$\frac{1}{\sqrt{n}}\| A \|{\scriptsize \infty} \leq \| A \|{\scriptsize 2} \leq
 >
 >   Pero
 >
->   $$\underset{\|x\|_2 = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$$ 
+>   $$\underset{\|x\|{\scriptsize 2} = 1}{sup} \|Ax\| {\scriptsize \infty} \leq \underset{\|x\|_\infty = 1}{sup} \|Ax\| {\scriptsize \infty} = \|Ax\| {\scriptsize \infty}$$ 
 >
 >   por lo tanto:
 >
