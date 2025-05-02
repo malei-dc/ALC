@@ -650,11 +650,11 @@ $$\frac{1}{\sqrt{n}}\| A \|_\infty \leq \| A \|_2 \leq \sqrt{n} \| A \|_\infty$$
 >
 > - Cota inferior:
 >
-> $$\|A\|_\infty = \underset{\|x\|_\infty = 1}{sup}\|Ax\|{\scriptsize \infty} \leq \underset{\|x\|_2 = \sqrt{n}}{sup}\|Ax\|{\scriptsize \infty} = \underset{\|x\|_2 = 1}{sup}\|A\sqrt{n}x\|{\scriptsize \infty} = \sqrt{n}\underset{\|x\|_2 = 1}{sup}\|Ax\|{\scriptsize \infty}$$
+> $$\|A\|{\scriptsize \infty} = \underset{\|x\|_\infty = 1}{sup}\|Ax\|{\scriptsize \infty} \leq \underset{\|x\|_2 = \sqrt{n}}{sup}\|Ax\|{\scriptsize \infty} = \underset{\|x\|_2 = 1}{sup}\|A\sqrt{n}x\|{\scriptsize \infty} = \sqrt{n}\underset{\|x\|_2 = 1}{sup}\|Ax\|{\scriptsize \infty}$$
 >
 > Y de ahi:
 >
-> $$\|A\|_\infty \leq \sqrt{n} \|A\|_2 \Rightarrow \frac{1}{\sqrt{n}}\|A\|_\infty \leq \|A\|_2$$
+> $$\|A\|_\infty \leq \sqrt{n} \|A\|{\scriptsize 2} \Rightarrow \frac{1}{\sqrt{n}}\|A\|_\infty \leq \|A\|{\scriptsize 2}$$
 >
 > $$\square$$
 
@@ -666,7 +666,7 @@ $$\frac{1}{\sqrt{n}}\| A \|_1 \leq \| A \|_2 \leq \sqrt{n} \| A \|_1$$
 
 Probar que para toda $A \in \mathbb{R}^{n \times n}$
 
-$$\|A\|_\infty = \underset{1\leq i \leq n}{max} \sum_{j=1}^n |a_{ij}|$$
+$$\|A\|{\scriptsize \infty} = \underset{1\leq i \leq n}{max} \sum_{j=1}^n |a{\scriptsize ij}|$$
 
 Es decir que la norma infinita de una matriz $A$ es max de las normas por fila
 
