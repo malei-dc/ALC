@@ -682,4 +682,24 @@ Es decir que la norma infinita de una matriz $A$ es max de las normas por fila
 >
 > Si hay mas de un maximo tomamos cualquiera. Podemos suponer que $\sum_{j=1}^n |a{\scriptsize kj}| > 0$ de otro modo el resultado es inmediato. Llamemos $z$ al vertor de los signos de los elementos de esa fila $z=(sg(a_{k,1}),...,sg(a_{k,n}))$. Si algún $a{\scriptsize ki} = 0$ tomamos $sg(a{\scriptsize k1}) = 0$. Como la fila no es nula, $z\neq 0$. Luego $\|z\|{\scriptsize \infty} = 1$ ya que es tomar el max de $z$.
 >
-> $$\|A\|{\scriptsize \infty} = \underset{\|x\| {\scriptsize \infty} = 1}{max} \|Ax\|{\scriptsize \infty} \geq \|Az\|{\scriptsize \infty} $$
+> $$\|A\|{\scriptsize \infty} = \underset{\|x\| {\scriptsize \infty} = 1}{max} \|Ax\|{\scriptsize \infty} \geq \|Az\|{\scriptsize \infty} \geq \sum_{j=1}^n a {\scriptsize ij} sg(a{\scriptsize ij}) = \sum_{j=1}^n |a{\scriptsize ij}| = \underset{1\leq i \leq n}{max} \sum_{j=1}^n |a{\scriptsize ij}|$$
+>
+> Esto prueba un lado de la desigualdad.
+>
+> Para la otra desigualdad, sea $x \in \mathbb{R}^n$ tal que $\|x\|{\scriptsize \infty}=1$, luego para todo $1\leq j \leq n, |x{\scriptsize j}| \leq \|x\|_{\infty} = 1$ y entonces, para cualquier elemento $i$ del vector $Ax$
+>
+> $$|[Ax]{\scriptsize i}| = |\sum_{j=1}^n a{\scriptsize ij} x {\scriptsize j}| \leq  |\sum_{j=1}^n a{\scriptsize ij}| \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
+>
+> Vimos que:
+>
+> - $\|A\|_{\infty} \geq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$
+> - $\|A\|_{\infty} \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$
+>
+> Por ende tienen que ser iguales. $\square$
+
+$$\|A\|{\scriptsize 1} = \underset{1\leq j \leq n}{max} \sum_{i=1}^n |a{\scriptsize ij}|$$
+
+Es decir que la norma-1 de una matriz $A$ es max de las normas por columna
+
+> Lo debo, pero calculo que es similar a arriba
+
