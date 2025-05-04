@@ -692,9 +692,9 @@ Es decir que la norma infinita de una matriz $A$ es max de las normas por fila
 >
 > Vimos que:
 >
-> $$1 )\|A\|_{\infty} \geq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
+> $$1 )\|A\|{\scriptsize \infty} \geq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
 > 
-> $$2)\|A\|_{\infty} \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
+> $$2)\|A\|{\scriptsize \infty} \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
 >
 > Por ende tienen que ser iguales. $\square$
 
