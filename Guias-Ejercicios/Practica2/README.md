@@ -692,8 +692,9 @@ Es decir que la norma infinita de una matriz $A$ es max de las normas por fila
 >
 > Vimos que:
 >
-> - $\|A\|_{\infty} \geq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$
-> - $\|A\|_{\infty} \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$
+> $$1 )\|A\|_{\infty} \geq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
+> 
+> $$2)\|A\|_{\infty} \leq \underset{1\leq i \leq n}{max} (\sum_{j=1}^n |a{\scriptsize ij}|)$$
 >
 > Por ende tienen que ser iguales. $\square$
 
@@ -703,3 +704,21 @@ Es decir que la norma-1 de una matriz $A$ es max de las normas por columna
 
 > Lo debo, pero calculo que es similar a arriba
 
+### 18) 
+
+Se quiere estimar la norma 2 de una matriz A ∈ Rn×n como el m´aximo del valor
+∥Ax∥2/∥x∥2 entre varios vectores x ∈ R3 no nulos generados al azar. Hacer un programa que
+reciba una matriz A y luego
+• genere los primeros 100 t´erminos de la siguiente sucesi´on:
+s1 = 0, sk+1 = max
+n
+sk,
+∥Axk∥2
+∥xk∥2
+o
+donde los xk ∈ R3 son vectores no nulos generados al azar en la bola unitaria: B = {x :
+∥x∥2 ≤ 1}.
+• grafique la sucesi´on calculada, junto con el valor exacto de la norma de la matriz.
+Recordar que tanto la norma 2 puede calcularse con el comando np. linalg .norm. Tener en
+cuenta que los vectores generados al azar (comando np.random.random) tienen coordenadas en
+el intervalo [0, 1].
