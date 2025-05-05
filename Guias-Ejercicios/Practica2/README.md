@@ -704,21 +704,104 @@ Es decir que la norma-1 de una matriz $A$ es max de las normas por columna
 
 > Lo debo, pero calculo que es similar a arriba
 
-### 18) 
+### 18) Estimación Estocástica de la Norma-2 de una Matriz Mediante Muestreo Aleatorio en la Bola Unitaria
 
-Se quiere estimar la norma 2 de una matriz A ∈ Rn×n como el m´aximo del valor
-∥Ax∥2/∥x∥2 entre varios vectores x ∈ R3 no nulos generados al azar. Hacer un programa que
-reciba una matriz A y luego
-• genere los primeros 100 t´erminos de la siguiente sucesi´on:
-s1 = 0, sk+1 = max
-n
-sk,
-∥Axk∥2
-∥xk∥2
-o
-donde los xk ∈ R3 son vectores no nulos generados al azar en la bola unitaria: B = {x :
-∥x∥2 ≤ 1}.
-• grafique la sucesi´on calculada, junto con el valor exacto de la norma de la matriz.
-Recordar que tanto la norma 2 puede calcularse con el comando np. linalg .norm. Tener en
-cuenta que los vectores generados al azar (comando np.random.random) tienen coordenadas en
-el intervalo [0, 1].
+Se quiere estimar la norma-2 de una matriz $A \in \mathbb{R}^{n \times n}$ como el máximo del valor $∥Ax∥{\scriptsize 2}/∥x∥{\scriptsize 2}$ entre varios vectores $x \in \mathbb{R}^3$ no nulos generados al azar. Hacer un programa que
+reciba una matriz $A$ y luego
+
+- genere los primeros 100 términos de la siguiente sucesión:
+
+    $$s{\scriptsize 1}=0, s{\scriptsize k+1} = max[s_k, \frac{\|Ax{\scriptsize k}\|{\scriptsize 2}}{\|x{\scriptsize k}\|{\scriptsize 2}}] $$
+
+    donde los $x_k \in \mathbb{R}^3$ son vectores no nulos generados al azar en la bola unitaria: $B = [x :∥x∥_2 ≤ 1]$.
+
+- grafique la sucesión calculada, junto con el valor exacto de la norma de la matriz.
+
+Recordar que tanto la norma-2 puede calcularse con el comando ```np.linalg.norm```. Tener en cuenta que los vectores generados al azar (comando ```np.random.random```) tienen coordenadas en el intervalo [0, 1].
+
+> En el archivo [practica2.ipynb](/Guias-Ejercicios/Practica2/practica2.ipynb) el codigo.
+>
+> ![](/Guias-Ejercicios/Practica2/graficos/18.png)
+>
+     A =  [[0.37454012 0.95071431 0.73199394]
+           [0.59865848 0.15601864 0.15599452]
+           [0.05808361 0.86617615 0.60111501]]
+    iteracion 1 de la estimacion: 0
+    iteracion 2 de la estimacion: 1.5473778966512244
+    iteracion 3 de la estimacion: 1.5634298026819895
+    iteracion 4 de la estimacion: 1.6457297869764551
+    ...
+    iteracion 99 de la estimacion: 1.6457297869764551
+    norma exacta: 1.666728164305919
+
+> - Como estoy generando vectores al azar en la bola unitaria de $\mathbb{R}^3$, es poco probable que alguno sea exactamente el vector que maximiza ese cociente. 
+> - Con más iteraciones (por ejemplo, 10,000 en lugar de 100), es posible que la estimación se acerque más a la norma exacta, pero nunca garantiza que la iguale, porque es un método estocástico.
+>
+> ---
+> 
+> Un método estocástico es un procedimiento que implica aleatoriedad o probabilidad para obtener una solución aproximada a un problema. A diferencia de un método determinista (que siempre produce el mismo resultado para la misma entrada), un método estocástico puede dar resultados ligeramente diferentes cada vez que se ejecuta, porque usa números aleatorios como parte del proceso.
+>
+> ---
+
+## Condición de matrices
+
+### 19) Estabilidad y sensibilidad de sistemas lineales
+
+Se tiene el sistema $Ax = b$
+
+1. Sea $x$ la solución exacta y $\overset{\sim}{x}$ la solución obtenida numéricamente. Se llama residuo al vector $r := b − A \overset{\sim}{x}$ (residuo). Si notamos $e = x − \overset{\sim}{x}$ (error), mostrar que:
+
+    $$\frac{1}{cond(A)} \frac{\|r\|}{\|b\|} \leq \frac{\|e\|}{\|x\|} \leq cond (A) \frac{\|r\|}{\|b\|} $$
+
+> Demo:
+>
+> 1. Veamos algunas relaciones 
+>
+>       Sabemos que: 
+>
+>       $$Ae = A(x-\overset{\sim}{x}) = Ax - A\overset{\sim}{x} = b - A\overset{\sim}{x} = r \Rightarrow Ae = r$$
+>
+>       Entonces como $A$ invertible:
+>
+>       $$e = A^{-1}r \Rightarrow \|e\| = \|A^{-1}r\| \leq \|A^{-1}\| \|r\| $$
+>
+>       Ahora como también pasa que $Ax = b$
+>
+>       $$\|x\| = \|A^{-1}b\| \leq \|A^{-1}\|.\|b\| \Rightarrow \frac{1}{\|x\|} \geq \frac{1}{\|A^{-1}\|.\|b\|}$$
+>
+> 2. Cota superior:
+>
+>       $$\frac{\|e\|}{\|x\|} = \frac{\|A^{-1}r\|}{\|x\|} \leq \frac{\|A^{-1}\| \|r\|}{\|x\|} \overset{multiplico \text{ y } divido \text{ } A}{=} \|A^{-1}\| \|A\| \frac{\|r\|}{\|A\| .\|x\|} \leq cond(A)\frac{\|r\|}{\|b\|}$$
+>
+> 3. Cota inferior
+>
+> $$\frac{\|e\|}{\|x\|} = \frac{\|e\|}{\|A^{-1}b\|} \geq \frac{\|e\|}{\|A^{-1}\| \|b\|} = \frac{\|A^{-1}r\|}{\|A^{-1}\| \|b\|}$$
+>
+> NOTA: si vale que $\|A^{-1}r\| \geq \frac{1}{\|A\|}\|r\|$ gané, PREGUNTAR.
+
+¿Cómo se puede interpretar este resultado?
+
+> - $\frac{\|e\|}{\|x\|}$: el error relativo de la solución.
+> - $\frac{\|r\|}{\|b\|}$: el erro relativo de la medición.
+> - $cond(A) = \|A\|.\|A^{-1}\|$: número de condición representa cuán sensible es la solución a pretubaciones.
+>
+> Interpretación:
+>
+> 1. El error relativo está acotado por el error de la medición relativo, escalado por el número de condición.
+> 2. No basta con que el residuo sea pequeño para asegurar que el error lo sea también.
+> 3. Si $cond(A) \approx 1$ entonces error y residuo relativos son similares.
+
+2. En lugar del dato exacto $b$ se conoce una aproximación $\overset{\sim}{b}$. $\overset{\sim}{x}$ es tal que $A\overset{\sim}{x} = \overset{\sim}{b}$. Probar
+que:
+
+    $$\frac{1}{cond(A)} \frac{\|b-\overset{\sim}{b}\|}{\|b\|} \leq \frac{\|x-\overset{\sim}{x}\|}{\|x\|} \leq cond (A) \frac{\|b-\overset{\sim}{b}\|}{\|b\|} $$
+
+> La demo es análogo al anterior.
+
+¿Cómo se puede interpretar este resultado?
+
+> Este resultado te dice:
+>
+> - El error relativo en la solución $x$ depende directamente del error relativo en los datos $b$, y está amplificado por el número de condición.
+> - Si $cond(A)≫1$, un pequeño error en los datos puede generar un gran error en la solución.
+> - En cambio, si $cond(A)≈1$, entonces el error en $x$ es proporcional al error en $b$.
