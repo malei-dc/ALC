@@ -805,3 +805,66 @@ que:
 > - El error relativo en la solución $x$ depende directamente del error relativo en los datos $b$, y está amplificado por el número de condición.
 > - Si $cond(A)≫1$, un pequeño error en los datos puede generar un gran error en la solución.
 > - En cambio, si $cond(A)≈1$, entonces el error en $x$ es proporcional al error en $b$.
+
+### 20) Calcular número condición y experimentos
+
+sea
+
+$$A= \begin{bmatrix}
+3 & 0 & 0 \\
+0 & \frac{5}{4} & \frac{3}{4} \\
+0 & \frac{3}{4} & \frac{5}{4}
+\end{bmatrix}$$
+
+1. Calcular $cond_{\infty}(A)$
+
+> Sabemos que $cond_{\infty}(A) = \|A\| * \|A^{-1}\|$
+>
+> Para calcular $\|A\|_{\infty}$ es el máximo de la suma de los modulos en la fila:
+>
+> - Fila 1: $|3| + 0 + 0 = 3$
+> - Fila 2: $0 + |\frac{5}{4}| + |\frac{3}{4}| = 2$
+> - Fila 2: $0 + |\frac{3}{4}| + |\frac{5}{4}| = 2$
+>
+> Entonces queda que $max(3,2,2) = 3 \Rightarrow \|A\|_{\infty} = 3$
+>
+> Ahora para invertir la matriz $A$ usamos la estructura especial que tiene la matriz
+>
+> $$A= \begin{bmatrix}
+3 & 0  \\
+0 & B
+\end{bmatrix} \Rightarrow A^{-1} = \begin{bmatrix}
+\frac{1}{3} & 0  \\
+0 & B^{-1}
+\end{bmatrix}$$
+>
+> Entonces para invertir $B$ tenemos que calcular la determinante y cambiar los signos de la siguiente forma:
+>
+> $$B^{-1} =\frac{1}{det(B)} \begin{bmatrix}
+a & -b  \\
+-b & a
+\end{bmatrix}$$
+>
+> Donde $a = \frac{5}{4}$ y $b= \frac{3}{4}$ entonces para calcular la $det(A) = a . a - b . b = \frac{25}{16} - \frac{9}{16} = 1$
+>
+> Entonces queda que:
+>
+> $$ A^{-1} = \begin{bmatrix}
+\frac{1}{3} & 0 & 0 \\
+0 & \frac{5}{4} & -\frac{3}{4} \\
+0 & -\frac{3}{4} & \frac{5}{4}
+\end{bmatrix}$$
+>
+> Lo cual a vista sale que $\|A^{-1}\|_{\infty} = 2 \Rightarrow cond(A) = 3 .2 = 6$
+
+2. ¿Cuán chico debe ser el error relativo en los datos $(\frac{\|b-\overset{\sim}{b}\|}{\|b\|})$, si se desea que el error relativo en la aproximación de la solución $(\frac{\|x-\overset{\sim}{x}\|}{\|x\|})$ sea menor que $10^{-4}$ en $\|.\|_{\infty}$?
+
+> Por el ejercicio anterior sabemos que:
+>
+> $$\frac{\|x-\overset{\sim}{x}\|}{\|x\|} \leq cond (A) \frac{\|b-\overset{\sim}{b}\|}{\|b\|}$$
+>
+> Como ya calculamos que $cond(A)= 6$ y queremos que $\frac{\|x-\overset{\sim}{x}\|}{\|x\|}< 10^{-4}$ despejamos el error relativo:
+>
+> $$6.\frac{\|b-\overset{\sim}{b}\|}{\|b\|} < 10^{-4} \Rightarrow \frac{\|b-\overset{\sim}{b}\|}{\|b\|} < \frac{10^{-4}}{6} = 1.666*10^{-5}$$
+
+3. Realizar experimentos numéricos para verificar las estimaciones del ítem anterior. Considerar $b = (3, 2, 2)^t$, que se corresponde con la solución exacta $x = (1, 1, 1)^t$. Generar vectores de error aleatorios, normalizarlos para que su norma sea tan chica como la estimada en el item anterior y perturbar $b$ obteniendo $\overset{\sim}{b}$. Finalmente, resolver $A\overset{\sim}{x} = \overset{\sim}{b}$ y verificar que $\|\overset{\sim}{x} − x\| < 10^{−4}$.
