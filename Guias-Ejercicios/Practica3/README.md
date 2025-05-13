@@ -61,7 +61,7 @@ $$A = \begin{pmatrix}1 & -1 & 0 & 1\\
 
     $$T^{ij}(a) = I_n + aE^{ij}$$
 
-    con $E^{ij}$ la matriz  con un 1 en posición $(i,j)$
+    con $E^{ij}$ la matriz  con un 1 en posición (i,j)
 
 > $$ T^{32}(-1)(T^{41}(3) T^{31}(-2)). A=$$
 >
@@ -93,7 +93,7 @@ $$A = \begin{pmatrix}1 & -1 & 0 & 1\\
 0 & 1 & 0 & 0 \\
 -2 & 0 & 1 & 0\\
 3 & 0 & 0 & 1
-\end{pmatrix}* 
+\end{pmatrix} *
 \begin{pmatrix}1 & -1 & 0 & 1\\ 
 0 & 1 & 4 & 0 \\
 2 & -1 & 0 & -2\\
