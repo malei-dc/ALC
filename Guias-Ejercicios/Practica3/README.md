@@ -300,3 +300,56 @@ $$A=\begin{pmatrix}0 & 1 & 0\\
 0 & 1 & 0\\
 0 & 0 & 0
 \end{pmatrix}$$
+
+> Para la matriz:
+>
+> $$A=\begin{pmatrix}0 & 1 & 0\\ 
+1 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix}$$
+>
+> Si intentamos hacer la descomposición $LU$ en el elemento $a_{11}$ tenemos un $0$, por lo tanto no se puede iniciar la eliminación gaussiana estándar sin intercambiar filas $\Rightarrow$ no admite descomposición $LU$ sin pivoteo.
+>
+> Veamos si se puede invertir intentando calcular el determinante:
+>
+>  $$det(A)=\begin{vmatrix}0 & 1 & 0\\ 
+1 & 0 & 0\\
+0 & 0 & 1
+\end{vmatrix} = 0 . \begin{vmatrix}0 & 0\\ 
+0 & 1\\
+\end{vmatrix}-1. \begin{vmatrix}1 & 0\\ 
+0 & 1\\
+\end{vmatrix} + 0 . \begin{vmatrix}1 & 0\\ 
+0 & 0\\
+\end{vmatrix} = -1$$
+>
+> $$\Rightarrow det(A) = -1 \neq 0 \rightarrow A \text{ es inversible.}$$
+>
+> - Una matriz puede ser invertible y no admitir descomposición LU sin pivoteo (como en este caso).
+> - Para que exista $LU$ sin pivoteo, es necesario que todos los pivotes parciales (elementos de la diagonal) sean distintos a $0$ sin reordenar filas.
+>
+> --- 
+>
+> Siguiendo la misma linea con $A$ vamos a analizar cada uno de las matrices restantes:
+>
+> - Matriz $B$
+>   - No admite descomposición $LU$ por tener diagonal en $0$
+>   - Como tiene la última fila nula, su determinante es $0$, NO es inversible.
+> - Matriz $C$
+>   - No admite descomposición $LU$ por tener diagonal en $0$
+>   - Como tiene una columna nula, su determinante es $0$, NO es inversible.
+> - Matriz $D$
+>   - Es triangular superior con ceros bajo la diagonal, si admite descomposición $LU \Rightarrow L = I, U=D$
+>   - Tiene una fila nula, asi que NO es inversible.
+>
+> Conclusiones: 
+>
+> - La existencia de una descomposición LU sin pivoteo no implica que la matriz sea invertible.
+> - La inversibilidad tampoco garantiza la existencia de una descomposición $LU$ sin pivoteo (caso de la matriz $A$ anterior).
+
+## 7) 
+
+Sea $A \in \mathbb{R}^{n \times n}$ inversible tal que $A = TS$ donde $T \in \mathbb{R}^{n\times n}$ es triangular inferior y $S \in \mathbb{R}^{n\times n}$ es triangular superior. Probar:
+
+1. $T$ y $S$ son inversibles.
+2. $A$ tiene factorización $LU$ (con unos en la diagonal de $L$).
