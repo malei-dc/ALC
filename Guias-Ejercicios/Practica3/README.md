@@ -262,3 +262,41 @@ $$A = \begin{pmatrix}0 & 1 & 2\\
 
 2. Hallar la descomposición $LU$ de $PA$ para alguna matriz de permutación $P$ adecuada.
 
+> Basicamente puedo permutar la fila 1 con fila 2, haciendo eso y luego la descomposición $LU$ 
+>
+> $$PA = LU$$
+>
+> $$\Rightarrow \begin{pmatrix}0 & 1 & 0\\ 
+1 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}0 & 1 & 2\\ 
+1 & 1 & 0\\
+1 & 0 & 3
+\end{pmatrix} = 
+\begin{pmatrix}1 & 0 & 0\\ 
+0 & 1 & 0\\
+-1 & 1 & 1
+\end{pmatrix}
+\begin{pmatrix}1 & 1 & 0\\ 
+0 & 1 & 2\\
+0 & 0 & 5
+\end{pmatrix}$$
+
+## 6) Relación entre inversibilidad y existencia de descomposición
+
+Para cada una de las siguientes matrices analizar existencia y unicidad de la descomposición $LU$ (sin pivoteo). ¿Qué relación existe entre la inversibilidad de una matriz y la existencia de dicha descomposición?
+
+$$A=\begin{pmatrix}0 & 1 & 0\\ 
+1 & 0 & 0\\
+0 & 0 & 1
+\end{pmatrix}, B = \begin{pmatrix}0 & 1 & 0\\ 
+1 & 0 & 0\\
+0 & 0 & 0
+\end{pmatrix}, C = \begin{pmatrix}0 & 1 & 1\\ 
+0 & 0 & 1\\
+0 & 1 & 0
+\end{pmatrix}, D = \begin{pmatrix}1 & 0 & 0\\ 
+0 & 1 & 0\\
+0 & 0 & 0
+\end{pmatrix}$$
