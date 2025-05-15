@@ -347,9 +347,90 @@ $$A=\begin{pmatrix}0 & 1 & 0\\
 > - La existencia de una descomposición LU sin pivoteo no implica que la matriz sea invertible.
 > - La inversibilidad tampoco garantiza la existencia de una descomposición $LU$ sin pivoteo (caso de la matriz $A$ anterior).
 
-## 7) 
+## 7) Propiedades sobre las matrices L y U
 
 Sea $A \in \mathbb{R}^{n \times n}$ inversible tal que $A = TS$ donde $T \in \mathbb{R}^{n\times n}$ es triangular inferior y $S \in \mathbb{R}^{n\times n}$ es triangular superior. Probar:
 
 1. $T$ y $S$ son inversibles.
+
+> Probamos que las derminantes de estas matrices no son 0. Según la consigna sabemos que $A$ es inversible, por lo tanto $det(A) \neq 0$. Sabemos que podemos escribir a $A = TS \Rightarrow det(A) = det(TS) = det(T) . det(S) \neq 0$
+> 
+> Y como sabemos que si una matriz cuadrada tiene determinante distinto a $0$ es inversible. Entonces $S$ y $T$ son inversibles.
+
 2. $A$ tiene factorización $LU$ (con unos en la diagonal de $L$).
+
+> Como podemos escribir $A = TS$ es muy similar a la descomposición $LU$, solo que $T$ no tiene 1 en la diagonal. Lo que se puede hacer en este caso es:
+>
+> $$T = L.D$$
+>
+> Donde $D$ es la diagonal de $T$ y $L$ es la matriz con 1 en la diagonal y debajo de la diagonal en cada columna tiene los valores $L_{ij} = \frac{T_{ij}}{T_{ii}}$ (para $i>j$ y $L_{ii} = 1$). Con esto ya tenemos nuestro descomposición $LU$
+>
+> $$A= (LD)S = L(DS)$$
+
+## 9) Descomposición de Cholesky
+
+Considerar la matriz 
+
+$$\begin{pmatrix}4 & 2 & -2\\ 
+2 & 5 & 5\\
+-2 & 5 & 11
+\end{pmatrix}$$
+
+Mostrar que es definida positiva y calcular su descomposición de Cholesky.
+
+> Hacemos la eliminación gaussiana:
+>
+> $$\begin{pmatrix}4 & 2 & -2\\ 
+2 & 5 & 5\\
+-2 & 5 & 11
+\end{pmatrix} \underset{F2-\frac{1}{2}F1, F3 + \frac{1}{2}F1}{\rightarrow} \begin{pmatrix}4 & 2 & -2\\ 
+0 & 4 & 6\\
+0 & 6 & 10
+\end{pmatrix} \underset{F3-\frac{3}{2}F2}{\rightarrow} \begin{pmatrix}4 & 2 & -2\\ 
+0 & 4 & 6\\
+0 & 0 & 1
+\end{pmatrix} = U$$
+>
+> Entonces tenemos que la matriz diagonal es:
+>
+> $$D = \begin{pmatrix}4 & 0 & 0\\ 
+0 & 4 & 0\\
+0 & 0 & 1
+\end{pmatrix}$$
+>
+> que es definida positiva y por tanto también lo es el original.
+>
+> También podemos sacar que
+>
+> $$\overset{\sim}{L} = \begin{pmatrix}1 & 0 & 0\\ 
+\frac{1}{2} & 1 & 0\\
+-\frac{1}{2} & \frac{3}{2} & 1
+\end{pmatrix}$$
+>
+> Por lo tanto para sacar $L$ tenemos que hacer $L = \overset{\sim}{L}\sqrt{D}$
+>
+> $$L = \begin{pmatrix}1 & 0 & 0\\ 
+\frac{1}{2} & 1 & 0\\
+-\frac{1}{2} & \frac{3}{2} & 1
+\end{pmatrix} . \begin{pmatrix}2 & 0 & 0\\ 
+0 & 2 & 0\\
+0 & 0 & 1
+\end{pmatrix} = \begin{pmatrix}2 & 0 & 0\\ 
+1 & 2 & 0\\
+-1 & 3 & 1
+\end{pmatrix}$$
+>
+> Entonces se puede verificar que $M=LL^t$ (lo hacemos)
+>
+> $$ M = \begin{pmatrix}2 & 0 & 0\\ 
+1 & 2 & 0\\
+-1 & 3 & 1
+\end{pmatrix} . \begin{pmatrix}2 & 1 & -1\\ 
+0 & 2 & 3\\
+0 & 0 & 1
+\end{pmatrix} = \begin{pmatrix}4 & 2 & -2\\ 
+1 & 5 & 5\\
+-2 & 5 & 11
+\end{pmatrix}$$
+>
+> :)
