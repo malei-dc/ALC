@@ -457,7 +457,7 @@ Sea $A \in \mathbb{R}^{n\times n}$ una matriz simétrica. Probar que $A$ es defi
 >
 > COMPLETAR
 
-## 14) Gram-Schmidt
+## 14) Gram-Schmidt (con QR por mi)
 
 Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los subespacios generados por las siguientes bases:
 
@@ -471,7 +471,7 @@ Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los sub
 >
 > $$\overset{\sim}{q_1} = v_1 = (1,0,1)$$
 >
-> Toma $v_2: (0,1,1)$
+> Tomo $v_2: (0,1,1)$
 >
 > $$\overset{\sim}{q_2} = v_2 - P_{\overset{\sim}{q_1}}(v_2) = \begin{pmatrix}0\\ 
 1\\
@@ -498,6 +498,163 @@ Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los sub
 1\\
 \frac{1}{2}
 \end{pmatrix} $$
+>
+> Tomo $v_3: (0,0,1)$
+>
+> $$\overset{\sim}{q_3} = v_3 - P_{\langle\overset{\sim}{q_1},\overset{\sim}{q_2}\rangle}(v_3) = v_3 - P_{\overset{\sim}{q_1}}(v_3) - P_{\overset{\sim}{q_2}}(v_3) =$$
+>
+> $$ = \begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix} - \frac{(1,0,1)\begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix}}{(1,0,1)\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix}} 
+\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} - \frac{(-\frac{1}{2}, 
+1,\frac{1}{2})\begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix}}{(-\frac{1}{2}, 
+1,\frac{1}{2})\begin{pmatrix}-\frac{1}{2}\\ 
+1\\
+\frac{1}{2}
+\end{pmatrix}} 
+\begin{pmatrix}-\frac{1}{2}\\ 
+1\\
+\frac{1}{2}
+\end{pmatrix} =$$
+>
+>$$ = \begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix} - \frac{1}{2} 
+\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} - \frac{\frac{1}{2}}{\frac{3}{2}} 
+\begin{pmatrix}-\frac{1}{2}\\ 
+1\\
+\frac{1}{2}
+\end{pmatrix} = \begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix} - \frac{1}{2} 
+\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} - \frac{1}{3} 
+\begin{pmatrix}-\frac{1}{2}\\ 
+1\\
+\frac{1}{2}
+\end{pmatrix} = \begin{pmatrix}-\frac{1}{3}\\ 
+-\frac{1}{3}\\
+\frac{1}{3}
+\end{pmatrix}$$
+>
+> Ya tengo todos los $\overset{\sim}{q}$. Ahora normalizo cada uno:
+>
+> $$q_1 = \frac{\overset{\sim}{q_1}}{\|\overset{\sim}{q_1}\|_2} = \overset{\sim}{q_1} \frac{1}{\sqrt{2}} = \begin{pmatrix}\frac{1}{\sqrt{2}}\\ 
+0\\
+\frac{1}{\sqrt{2}}
+\end{pmatrix}$$
+>
+> $$q_2 = \frac{\overset{\sim}{q_2}}{\|\overset{\sim}{q_2}\|_2} = \overset{\sim}{q_2} \frac{\sqrt{3}}{\sqrt{2}} = \begin{pmatrix}-\frac{\sqrt{2}}{2\sqrt{3}}\\ 
+\frac{\sqrt{2}}{\sqrt{3}}\\
+\frac{\sqrt{2}}{2\sqrt{3}}
+\end{pmatrix}$$
+>
+> $$q_3 = \frac{\overset{\sim}{q_3}}{\|\overset{\sim}{q_3}\|_2} = \overset{\sim}{q_3} \sqrt{3} = \begin{pmatrix}-\frac{\sqrt{3}}{3}\\ 
+-\frac{\sqrt{3}}{3}\\
+\frac{\sqrt{3}}{3}
+\end{pmatrix}$$
+>
+> Obtuve mi base bon, vayamos más allá y busquemos la factorización $QR$.
+>
+> Sabemos que $\langle v_1 \rangle = \langle q_1 \rangle, \langle v_1,v_2 \rangle = \langle q_1, q_2 \rangle, \langle v_1,v_2,v_3 \rangle = \langle q_1, q_2,q_3 \rangle$
+>
+> $$v_1 = \begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} = \sqrt{2} \begin{pmatrix}\frac{1}{\sqrt{2}}\\ 
+0\\
+\frac{1}{\sqrt{2}}
+\end{pmatrix} = \sqrt{2} q_1$$
+>
+> $$v_2 = \begin{pmatrix}0\\ 
+1\\
+1
+\end{pmatrix} =  \frac{\sqrt{2}}{2}\begin{pmatrix}\frac{1}{\sqrt{2}}\\ 
+0\\
+\frac{1}{\sqrt{2}}
+\end{pmatrix} + \frac{\sqrt{3}}{\sqrt{2}} \begin{pmatrix}-\frac{\sqrt{2}}{2\sqrt{3}}\\ 
+\frac{\sqrt{2}}{\sqrt{3}}\\
+\frac{\sqrt{2}}{2\sqrt{3}}
+\end{pmatrix} = \frac{\sqrt{2}}{2}q_1 + \frac{\sqrt{3}}{\sqrt{2}} q_2$$
+>
+> $$v_3 = \begin{pmatrix}0\\ 
+0\\
+1
+\end{pmatrix} =  \frac{1}{\sqrt{2}} \begin{pmatrix}\frac{1}{\sqrt{2}}\\ 
+0\\
+\frac{1}{\sqrt{2}}
+\end{pmatrix} + \frac{\sqrt{2}}{2\sqrt{3}} \begin{pmatrix}-\frac{\sqrt{2}}{2\sqrt{3}}\\ 
+\frac{\sqrt{2}}{\sqrt{3}}\\
+\frac{\sqrt{2}}{2\sqrt{3}}
+\end{pmatrix} + \frac{1}{\sqrt{3}} \begin{pmatrix}-\frac{\sqrt{3}}{3}\\ 
+-\frac{\sqrt{3}}{3}\\
+\frac{\sqrt{3}}{3}
+\end{pmatrix} = \frac{1}{\sqrt{2}} q_1 + \frac{\sqrt{2}}{2\sqrt{3}} q_2 + \frac{1}{\sqrt{3}} q_3$$
+>
+> Armamos la descomposición:
+>
+> $$\begin{pmatrix}v_1| & v_2| & v_3 \end{pmatrix} = 
+\begin{pmatrix}1 & 0 & 0 \\
+0 & 1 & 0 \\
+1 & 1 & 1 \end{pmatrix} = 
+\begin{pmatrix}q_1| & q_2| & q_3 \end{pmatrix} 
+\begin{pmatrix}
+\sqrt{2} & \frac{\sqrt{2}}{2} & \frac{1}{\sqrt{2}} \\
+0 & \frac{\sqrt{3}}{\sqrt{2}} & \frac{\sqrt{3}}{2\sqrt{2}} \\
+0 & 0 & \frac{1}{\sqrt{3}} \end{pmatrix} = QR$$
 
 2. $B = \langle(i, 1 − i, 0), (i, 1, 0)\rangle$
+
+> Dado la base $B$ quiero construir un nuevo bon (base ortonormal) $\overset{\sim}{B} = \langle q_1, q_2 \rangle$
+>
+> Para cada vector de la base $B$ primero calculo $\overset{\sim}{q}$ y luego normalizo. Empecemos:
+>
+> Tomo $v_1: (i, 1 − i, 0)$
+>
+> $$\overset{\sim}{q}_1 = v_1 = (i, 1 − i, 0)$$
+>
+> Tomo $v_2: (i, 1, 0)$
+>
+> $$\overset{\sim}{q_2} = v_2 - P_{\overset{\sim}{q_1}}(v_2) = \begin{pmatrix}i\\ 
+1\\
+0
+\end{pmatrix} - \frac{(i,1-i,0)\begin{pmatrix}i\\ 
+1\\
+0
+\end{pmatrix}}{(i,1-i,0)\begin{pmatrix}i\\ 
+1-i\\
+0
+\end{pmatrix}} 
+\begin{pmatrix}i\\ 
+1-i\\
+0
+\end{pmatrix} = \begin{pmatrix}i\\ 
+1\\
+0
+\end{pmatrix} - \frac{-i}{-1-2i} 
+\begin{pmatrix}i\\ 
+1-i\\
+0
+\end{pmatrix} = ...$$
+
 3. $B = \langle(1,−1, 0, 1), (0, 1, 1, 0), (−1, 0, 1, 1)\rangle$
