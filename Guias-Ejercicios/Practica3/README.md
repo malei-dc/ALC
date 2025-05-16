@@ -434,3 +434,36 @@ Mostrar que es definida positiva y calcular su descomposición de Cholesky.
 \end{pmatrix}$$
 >
 > :)
+
+## 10) Caracterización de matrices definidas positivas mediante productos internos
+
+Sea $A \in \mathbb{R}^{n\times n}$ una matriz simétrica. Probar que $A$ es definida positiva si y sólo si existe un conjunto de vectores linealmente independientes $[x_1, ..., x_n] \subseteq \mathbb{R}^n$ tal que $a_{ij}=x_i^t x_j$
+
+> $\Rightarrow)$ Si tenemos que $A$ es definida positiva y simétrica, entonces existe la descomposición de Cholesky
+>
+> $$A = LL^t$$
+>
+> donde $L$ es una matriz triangular inferior con entradas reales y diagonal estrictamente positiva.
+>
+> Entonces podemos tomar las filas de $L$ como los vectores $x_i^t$ y nos queda que:
+>
+> $$a_{ij} = L_i L_j^t = x_i^t x_j$$
+>
+> Además como sé que $L$ tiene el rango completo por ser definida positiva (su determinante no es 0), las filas son LI 
+>
+> $\Leftarrow)$  si existe un conjunto de vectores linealmente independientes $[x_1, ..., x_n] \subseteq \mathbb{R}^n$ tal que $a_{ij}=x_i^t x_j$ quiero ver que $A$ es definida positiva.
+>
+> Construimos un $X \in \mathbb{R}^{n \times n}$ cuyas filas son vectores $x_i^t$.
+>
+> COMPLETAR
+
+## 14) Gram-Schmidt
+
+Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los subespacios generados por las siguientes bases:
+
+1. $B = \langle (1, 0, 1), (0, 1, 1), (0, 0, 1)\rangle$
+
+
+
+2. $B = \langle(i, 1 − i, 0), (i, 1, 0)\rangle$
+3. $B = \langle(1,−1, 0, 1), (0, 1, 1, 0), (−1, 0, 1, 1)\rangle$
