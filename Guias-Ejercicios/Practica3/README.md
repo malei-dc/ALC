@@ -463,7 +463,41 @@ Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los sub
 
 1. $B = \langle (1, 0, 1), (0, 1, 1), (0, 0, 1)\rangle$
 
-
+> Dado la base $B$ quiero construir un nuevo bon (base ortonormal) $\overset{\sim}{B} = \langle q_1, q_2, q_3 \rangle$
+>
+> Para cada vector de la base $B$ primero calculo $\overset{\sim}{q}$ y luego normalizo. Empecemos:
+>
+> Tomo $v_1: (1,0,1)$
+>
+> $$\overset{\sim}{q_1} = v_1 = (1,0,1)$$
+>
+> Toma $v_2: (0,1,1)$
+>
+> $$\overset{\sim}{q_2} = v_2 - P_{\overset{\sim}{q_1}}(v_2) = \begin{pmatrix}0\\ 
+1\\
+1
+\end{pmatrix} - \frac{(1,0,1)\begin{pmatrix}0\\ 
+1\\
+1
+\end{pmatrix}}{(1,0,1)\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix}} 
+\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} = \begin{pmatrix}0\\ 
+1\\
+1
+\end{pmatrix} - \frac{1}{2} 
+\begin{pmatrix}1\\ 
+0\\
+1
+\end{pmatrix} = 
+\begin{pmatrix}-\frac{1}{2}\\ 
+1\\
+\frac{1}{2}
+\end{pmatrix} $$
 
 2. $B = \langle(i, 1 − i, 0), (i, 1, 0)\rangle$
 3. $B = \langle(1,−1, 0, 1), (0, 1, 1, 0), (−1, 0, 1, 1)\rangle$
