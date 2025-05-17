@@ -658,3 +658,44 @@ Aplicar el algoritmo de Gram-Schmidt para calcular bases ortonormales de los sub
 \end{pmatrix} = ...$$
 
 3. $B = \langle(1,−1, 0, 1), (0, 1, 1, 0), (−1, 0, 1, 1)\rangle$
+
+## 15) Construcciones de proyectores
+
+En cada uno de los siguientes casos construir un proyector $f : \mathbb{R}^3 \rightarrow \mathbb{R}^3$ que cumpla:
+
+1. $Im(f) = (x_1, x_2, x_3)/x_1 + x_2 + x_3 = 0$
+
+> Hallamos una base de $Im(f)=\langle (-1,1,0)(-1,0,-1)\rangle$ y completamos a una base de $\mathbb{R}^3$ y luego definimos $f$ sobre esa base. $B = \langle (-1,1,0)(0,-1,-1)(0,0,1)\rangle$ es claro que $B$ es una base de $\mathbb{R}^3$ que contirne a una base de $Im(f)$.
+>
+> Ahora, si $y \in Im(f) \Rightarrow \exist x \in \mathbb{R}^3/ f(x) = y$ de modo que $f(x) = f(y)$ pero $f(x) = y$, así que $y=f(y)$.
+>
+> Por lo tanto, si $f$ es un proyector e $y \in Im(f)$, entonces $f(y) = y$. Definimos:
+>
+> $$\begin{cases}f(-1,1,0) = (-1,1,0) \\
+f(0,-1,-1) = (0,-1,-1) \\
+f(0,0,1) = (0,0,0)
+\end{cases}$$
+>
+> Con esta definición tenemos que $Nu(f) \oplus Im(f) = \mathbb{R}^3$
+>
+> Una vez que tenemos definido $f$ sobre una base podemos hacer explicitamente la expresión $f(x,y,z)$:
+>
+> $$(x,y,z) = \lambda_1 (-1,1,0) + \lambda_2 (0,-1,-1) + \lambda_3 (0,0,1)$$
+>
+> $$\begin{cases}x = -\lambda_1 \\
+y = \lambda_1 - \lambda_2 \\
+z = -\lambda_2 + \lambda_3
+\end{cases} \Rightarrow \begin{cases}-x = \lambda_1 \\
+-y - x = \lambda_2 \\
+z -y -x = \lambda_3
+\end{cases} $$
+>
+> Por lo tanto 
+>
+> $$(x,y,z) = (-x) (-1,1,0) + (-y - x)  (0,-1,-1) + (z -y -x) (0,0,1)$$
+>
+> $$\Rightarrow f(x,y,z) = (-x) f(-1,1,0) + (-y - x) f(0,-1,-1) + (z -y -x) f(0,0,1)$$
+>
+> $$= (-x) (-1,1,0) + (-y - x) (0,-1,-1) + (z -y -x) (0,0,0) \Rightarrow $$
+>
+> $$ f(x,y,z) = (x, -y-2x,y+x) $$
