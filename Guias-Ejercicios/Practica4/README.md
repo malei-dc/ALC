@@ -142,3 +142,5 @@ $$C = \begin{pmatrix} 3 & 1 & 0 \\
 > - $\lambda = -2$ 
 >
 > Calculamos los autovectores para cada autovalor:
+>
+> Caso $\lambda = 1$
